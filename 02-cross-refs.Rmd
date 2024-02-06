@@ -1,0 +1,42 @@
+# WHAT IS R
+
+R is a programming language used in statistical computing, data analysis, data
+science among a numerous host of other fields. R was developed in the early
+1990s by Ross Ihaka and Robert Gentleman at New Zealand's University of
+Auckland and since then, R has morphed into a bit of a Swiss army knife. The
+language is open source, meaning anyone can contribute to It or build packages
+with it that enhances R's usage in numerous fields. R is a powerful tool that
+is used for data visualization, analysis, modelling, web scraping, machine
+learning, etc. 
+
+As a statistical computing languagem R, developed from another programming
+language called S, is adept for working with huge datasets and providing tools
+for working with them too.
+
+Tools for working with R can be referred to as packages. Think of packages as
+lines of code written to help solve other problems. For example, someone has
+written a package that helps import .csv data files into R without having to
+write so many lines of code to do this.
+
+R is used in machine learning, there are numerous packages in R that help you
+perform machine learning tasks such as classification, regression, boosting,
+neural networks etc. You also see some of the really nice plots some of the
+online journals use for articles to visualize statistics? Most of these charts
+are built with R. R does not stop there, say you have lonbgitude and latitude
+data in a dataset, can you plot it on top of a map to visualize it? YES! R is
+used for mapping too! How about some statistical analysis too? You want to
+perform ANOVA tests? analyze central tendency metrics of a given dataset? R has
+your back.
+
+
+If you want to work with data, R might be the best friend you will make in your life. There is a huge community of people who use R on a day to day basis and also share tips on how to get about. Learning R will equip you with tools to manipulate, clean, analyze, visualize and/or model datasets to answer whatever question you want answered. R being open source means you can also contribute to it by developing a package(Spoiler alert: you will do one in the building packages chapter). R is a handy tool for teachers, statisticians, researchers, analysts, journalists as well as any profession that works with data! We will explore to good detail, R's deep potential in statistical computing and at the end of each lesson, you will be equipped with skills to gradually develop your skills in R from no or little knowledge, slowly to expert level.
+
+
+
+
+
+
+
+
+
+
