@@ -29,7 +29,18 @@ perform ANOVA tests? analyze central tendency metrics of a given dataset? R has
 your back.
 
 
-If you want to work with data, R might be the best friend you will make in your life. There is a huge community of people who use R on a day to day basis and also share tips on how to get about. Learning R will equip you with tools to manipulate, clean, analyze, visualize and/or model datasets to answer whatever question you want answered. R being open source means you can also contribute to it by developing a package(Spoiler alert: you will do one in the building packages chapter). R is a handy tool for teachers, statisticians, researchers, analysts, journalists as well as any profession that works with data! We will explore to good detail, R's deep potential in statistical computing and at the end of each lesson, you will be equipped with skills to gradually develop your skills in R from no or little knowledge, slowly to expert level.
+If you want to work with data, R might be the best friend you will make in
+your life. There is a huge community of people who use R on a day to day basis
+and also share tips on how to get about. Learning R will equip you with tools
+to manipulate, clean, analyze, visualize and/or model datasets to answer 
+whatever question you want answered. R being open source means you can also
+contribute to it by developing a package(Spoiler alert: you will do one in the
+building packages chapter). R is a handy tool for teachers, statisticians,
+researchers, analysts, journalists as well as any profession that works with
+data! We will explore to good detail, R's deep potential in statistical
+computing and at the end of each lesson, you will be equipped with skills to
+gradually develop your skills in R from no or little knowledge, slowly to
+expert level.
 
 
 

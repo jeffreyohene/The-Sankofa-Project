@@ -4,12 +4,16 @@ editor_options:
     wrap: 72
 ---
 
-So you want to learn R? Now, programming is not easy. It is also not so
-hard.. What the hell is this guy on about? You will understand some
-concepts very easily and some concepts will be harder to grasp.
-Sometimes, some new concepts will be built on previous ones you learned,
-so it is important to always pay attention to detail and keep an open
-mind.
+# INTRO TO THIS BOOK
+
+![](files/img/sankofa.png) 
+
+So you want to learn R? Now, programming is
+not easy. It is also not so hard.. What the hell is this guy on about?
+You will understand some concepts very easily and some concepts will be
+harder to grasp. Sometimes, some new concepts will be built on previous
+ones you learned, so it is important to always pay attention to detail
+and keep an open mind.
 
 You will be face a lot of errors, your code won't work, at other times
 even ChatGPT will not be able to give you good solutions to copy and
@@ -92,7 +96,7 @@ without complaining. They can perform complex calculations, store huge
 amounts of data, perform repetitive tasks, something you and I cannot
 keep up.
 
-## What does a coder/programmer/developer do?
+## What does a programmer do?
 
 Because I do not want to get cancelled, as it's an ick for my crush, I
 will not start a war on specifying what and who these categories are and

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 LESSON 1: Data Types | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 LESSON 1: Data Types | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 LESSON 1: Data Types | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="starting-with-r.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html"><i class="fa fa-check"></i><b>1</b> INTRO TO THIS BOOK</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html#coding-what-is-it"><i class="fa fa-check"></i><b>1.1</b> CODING? WHAT IS IT</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html#what-does-a-programmer-do"><i class="fa fa-check"></i><b>1.2</b> What does a programmer do?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="what-is-r.html"><a href="what-is-r.html"><i class="fa fa-check"></i><b>2</b> WHAT IS R</a></li>
+<li class="chapter" data-level="3" data-path="starting-with-r.html"><a href="starting-with-r.html"><i class="fa fa-check"></i><b>3</b> STARTING WITH R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="starting-with-r.html"><a href="starting-with-r.html#downloading-r-rstudio"><i class="fa fa-check"></i><b>3.1</b> Downloading R &amp; RStudio</a></li>
+<li class="chapter" data-level="3.2" data-path="starting-with-r.html"><a href="starting-with-r.html#creating-our-first-r-project"><i class="fa fa-check"></i><b>3.2</b> Creating Our First R Project</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html"><i class="fa fa-check"></i><b>4</b> LESSON 1: Data Types</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#numeric-data-type"><i class="fa fa-check"></i><b>4.1</b> Numeric Data Type</a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#integer-data-type"><i class="fa fa-check"></i><b>4.2</b> Integer Data Type</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#logical-data-type"><i class="fa fa-check"></i><b>4.3</b> Logical Data Type</a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#character-data-type"><i class="fa fa-check"></i><b>4.4</b> Character Data Type</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#variables"><i class="fa fa-check"></i><b>4.5</b> Variables</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#numeric-integer-data-types"><i class="fa fa-check"></i><b>4.6</b> Numeric &amp; Integer Data Types</a></li>
+<li class="chapter" data-level="4.7" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#basic-numeric-and-integer-data-type-operations"><i class="fa fa-check"></i><b>4.7</b> Basic Numeric and Integer Data Type Operations</a></li>
+<li class="chapter" data-level="4.8" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#basic-character-data-type-operations"><i class="fa fa-check"></i><b>4.8</b> Basic Character Data Type Operations</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#string-operations-in-r"><i class="fa fa-check"></i><b>4.8.1</b> String Operations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#lesson-1-code-challenge"><i class="fa fa-check"></i><b>4.9</b> LESSON 1: CODE CHALLENGE</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-1-data-types" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> LESSON 1: Data Types<a href="lesson-1-data-types.html#lesson-1-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script src="files/js/dcl.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<p>Data types are the fundamental building blocks of almost every program
+you will ever write in R. They define the data type a object can contain
+and as an effect the types of operations that can be performed on that
+objects.</p>
+<p>In simpler words, data types are like different kinds of LEGO blocks you
+use to build things. They tell the computer what kind of information
+it’s dealing with, like numbers or words, and what you can do with that
+information, like adding numbers together or putting words together as a
+sentence for example, but in R, we can do so much more with these.</p>
+<p>In R, we have four main types of data and they are: - Numeric (num) -
+Integer (int) - Logical (logi) - Character (chr)</p>
+<div id="numeric-data-type" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Numeric Data Type<a href="lesson-1-data-types.html#numeric-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Numeric</code> data types are data types that are either whole numbers like
+10, 3, 78, 90, 55 and 7, or decimals like 3.14, 7.5, 49.7, 3.3334, 0.5
+and 123.2245. You will see this data type represented by the
+abbreviation <code>num</code> in R. In short, in R, if you see any kind of number
+with a decimal point, it is a numeric data type.</p>
+</div>
+<div id="integer-data-type" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Integer Data Type<a href="lesson-1-data-types.html#integer-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Integer</code> data types refer to data types that are whole numbers, and do
+not have a decimal point like -5, 45, 33, 7, 9 and 67. They are usually
+represented with an <code>L</code> at the end so, <code>7L</code> is an integer data type.
+They are represented by the abbreviation <code>int</code> in R.</p>
+</div>
+<div id="logical-data-type" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Logical Data Type<a href="lesson-1-data-types.html#logical-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Logical</code> or <code>boolean</code> data types represents truth values, either <code>TRUE</code>
+or <code>FALSE</code>. Logical data types are used for comparisons and conditional
+statements in R and are represented by <code>logi</code>.</p>
+</div>
+<div id="character-data-type" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Character Data Type<a href="lesson-1-data-types.html#character-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Character</code> data types are used to refer to text, string or alphanumeric
+data in R. They are represented by <code>chr</code>.</p>
+<p>Do note that, whenever you are working with text data, you need to wrap
+it inside single or double quotes for R to understand you are working
+with a character data type else R will throw up an error.</p>
+<p>You remember when you typed in your first line of R code in the console
+and hit enter it printed your name? Try typing your first name but this
+time, do not wrap it in quotes. Just literally type your name in the
+console and hit enter.</p>
+<p>R should throw up an error like <code>Error: object ... not found</code>. Why? This
+is because in R whenever you do not wrap a string or text in quotes, it
+reads it as an object and it will throw up an error because it was
+unable to find that object.</p>
+<p>This leads us to the last part of this lesson on data structures,
+interactive examples. But before we need to learn one more concept for
+this lesson.</p>
+<p>You notice whenever you type in a data type, try typing in a numeric,
+logical or character value in the code chunk below. Notice that it
+prints the value and then that’s it, it disappears?</p>
+<p>This behavior is not so helpful when programming. Sometimes we need to
+store data and then use it later on in our code. This helps make our
+program neater.</p>
+</div>
+<div id="variables" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Variables<a href="lesson-1-data-types.html#variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Enter variables! In R, a variable is a named storage location that holds
+data, and its value can be changed or updated during the course of a
+program. Variables are fundamental for storing and manipulating data in
+R. When you assign a value to a variable, you are creating a reference
+to a specific location in memory where that value is stored and you can
+use that value by referencing the variable name.</p>
+<p>In R, the syntax for assigning a variable is simple:</p>
+<p><code>variable_name &lt;- value</code></p>
+<p>Where <code>variable_name</code> is the name of your variable and <code>&lt;-</code> is the
+assignment operator in R and <code>value</code> is the value being assigned to that
+variable</p>
+<p>Think of a variable as a container for storing different objects.
+Supposing we have a container that has cookies, we label the container
+as cookies. We have another container that stores pencils, we label that
+as pencils and another that stores water, we can label that as water. So
+what happens is, each container stores a quantity of something, in
+programming we refer to that as variables. Let us say we have 5 cookies
+in the cookies container and we have 10 pencils in the pencils container
+and we have just water in the water container. We can represent that
+programatically like this:</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB2YXJpYWJsZXNcbmNvb2tpZXMgPC0gNVxucGVuY2lscyA8LSAxMFxud2F0ZXIgPC0gXCJ3YXRlclwiXG5cbiMgUHJpbnQgdmFyaWFibGVzXG5jb29raWVzXG5wZW5jaWxzXG53YXRlciJ9
+</div>
+<p>When we print our variables, voila! We still have them stored safely for
+us. We can decide to change the values the variable contain and it will
+update for us and we can have the new values available for us in our
+code.</p>
+<p>In R, I would in fact discourage from hardcoding values as much as
+possible. Try to store values in variables so you can have them
+accessible later on in your program. This helps a lot with debugging and
+when you figure out something is wrong, you only need to update the
+value you assigned to the variable and your code will run as normal,
+this helps you avoid updating every instance of the value if you
+hardcoded it.</p>
+<p>Try to live up to the famous words uttered by John F. Woods that says:
+“Always code as if the guy who ends up maintaining your code will be a
+violent psychopath who knows where you live.”</p>
+<p>Always strive for readability.</p>
+<p>Let us now truly start playing with the data types we’ve learned and
+combine the concept of variables with it.</p>
+</div>
+<div id="numeric-integer-data-types" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Numeric &amp; Integer Data Types<a href="lesson-1-data-types.html#numeric-integer-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the next two code chunks below, we will assign different numeric and
+then integer values and then print them to our console.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE51bWVyaWMgZGF0YVxuaGFsZiA8LSAwLjVcbnBpIDwtIDMuMTRcbmxlbmd0aCA8LSA3LjVcblxuaGFsZlxucGlcbmxlbmd0aCJ9
+</div>
+<p>We assigned and printed numeric data types.</p>
+<p>Let us see the same thing with an integer too. Integers, if you remember
+are whole numbers. Let us create 3 variables with names of 3 kids:
+Abena, Kofi and Yaa and assign their ages to these variables</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB2YXJpYWJsZXNcbmFiZW5hIDwtIDEwXG5rb2ZpIDwtIDE3XG55YWEgPC0gMTJcblxuIyBQcmludCB2YXJpYWJsZXNcbmFiZW5hXG5rb2ZpXG55YWEifQ==
+</div>
+<p>Voilà! We assigned and printed our integer variables.</p>
+<p>Time to try interactive hands on coding! In other words, GET SCHWIFTY!!</p>
+<p><img src="files/img/gifs/schwifty.gif" /></p>
+<p>Let us dial it back down to primary school. You have 2 pens, 3 pencils,
+an eraser, and a sharpener. Can you code these values below and assign
+them to their respective descriptive variables?</p>
+<p>Remember to assign all of the values to their respective variables and
+then print them.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFdyaXRlIHlvdXIgY29kZSBoZXJlIn0=
+</div>
+</div>
+<div id="basic-numeric-and-integer-data-type-operations" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Basic Numeric and Integer Data Type Operations<a href="lesson-1-data-types.html#basic-numeric-and-integer-data-type-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can perform arithmetic operations with numeric and integer data types
+in R.</p>
+<p>The operators for performing these operations are the same ones you
+learnt back in school.</p>
+<p><img src="files/img/gifs/or.gif" /></p>
+<p>HAHA just kidding. Arithmetic operators are similar in R, with some
+slight differences for some operators.</p>
+<ul>
+<li><code>+</code>: addition</li>
+<li><code>-</code>: subtraction</li>
+<li><code>*</code>: multiplication</li>
+<li><code>/</code>: division</li>
+<li><code>%%</code>: modulus (remainder for division)</li>
+<li><code>^</code>: exponent</li>
+</ul>
+<p>Instead of regular <code>x</code>, in R you use the asterisk operator, <code>*</code>, to
+perform multiplication and the <code>/</code> to perform division. Modulus is used
+to find the remainder of a division operation.</p>
+<p><code>IMPORTANT</code>: the order of operations in mathematics, BODMAS or PEMDAS,
+depending on where you are coming from, still holds true in R</p>
+<p>We will not go through the really basic operators like addition,
+subtraction, division and multiplication in the following examples we
+will see how the modulus and exponent operators works in R.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFBlcmZvcm0gbW9kdWx1cyBhbmQgZXhwb25lbnQgb3BlcmF0aW9uc1xueCA8LSAyN1xueSA8LSAzXG5cbiMgTW9kdWx1c1xueCAlJSB5XG5cbiMgRXhwb25lbnRcbnggXiB5In0=
+</div>
+<p>Perfect! So as we already know, 27 divided by 3 leaves no remainder and
+also, 27 raised to the power 3 is 19,683. This is how to use the modulus
+and exponent operators. But before, I would like to see you try to use
+them so you feel comfortable with it.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB0d28gbnVtZXJpYy9pbnRlZ2VyIHZhbHVlcyBhbmQgcGVyZm9ybSB0aGUgbW9kdWx1cyBhbmQgZXhwb25lbnQgb3BlcmF0aW9ucyJ9
+</div>
+<p>Perfect we now know how to perform arithmetic operations in R. Now let’s
+get a little lazy.</p>
+<p>So if you took my advice, it is always easier in R to perform operations
+if you do not hard-code values. It makes your code easier to maintain
+and you can perform operations with your variables even more easily.</p>
+<p>Let us take a random scenario for example: say we wanted to calculate
+the area of a triangle in R. We know the formula for finding an area for
+finding the area of a triangle is:</p>
+<p>Area = 1/2 * Base * Height</p>
+<p>Supposing we had a triangle with a base of 15cm and a height of 23cm,
+let us calculate its area!</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENhbGN1bGF0ZSBhcmVhIG9mIGEgdHJpYW5nbGVcbmJhc2VfaW5fY20gPC0gMTVcbmhlaWdodF9pbl9jbSA8LSAyM1xuXG4jIFBlcmZvcm0gY2FsY3VsYXRpb25cbmFyZWEgPC0gMC41ICogYmFzZV9pbl9jbSAqIGhlaWdodF9pbl9jbVxuXG4jIFByaW50IGFyZWFcbmFyZWEifQ==
+</div>
+<p>Great! Our area is 172.5 centimetres! If we had a new triangle with base
+and height to be 8cm and 12 cm respectively, we only need to update the
+<code>base_in_cm</code> and <code>height_in_cm</code> variables and we will still get the
+correct answer.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENhbGN1bGF0ZSBuZXcgdHJpYW5nbGUgYXJlYVxuYmFzZV9pbl9jbSA8LSA4XG5oZWlnaHRfaW5fY20gPC0gMTJcblxuIyBQZXJmb3JtIGNhbGN1bGF0aW9uXG5hcmVhIDwtIDAuNSAqIGJhc2VfaW5fY20gKiBoZWlnaHRfaW5fY21cblxuIyBQcmludCBhcmVhXG5hcmVhIn0=
+</div>
+<p>48 centimeters! Our code still run without any error. If we typed the
+values directly in our code and supposing there were numerous instances
+where we needed to use those values in our code, we would have to update
+each and every single one of them.</p>
+<p>Remember we learnt it is recommended to always avoid hardcoding when
+possible? In our triangle example, we could have assigned the value 0.5
+to a variable and use it in our code, but for the area formula for
+triangles, it is a constant so we can leave it like that. If you want to
+be really neat about this when you have numerous instances and do not
+want to hard-code, you can assign it to a variable if you so desire.</p>
+<p>The area of a rectangle is expressed as:</p>
+<p><code>Area = l * w</code>,</p>
+<p>where l is the rectangles length and w is its width.</p>
+<p>Now given a rectangle of dimensions 10cm and 4cm length and width
+respectively, can you calculate the area of this rectangle below?</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFdyaXRlIHlvdXIgY29kZSBiZWxvdyJ9
+</div>
+</div>
+<div id="basic-character-data-type-operations" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Basic Character Data Type Operations<a href="lesson-1-data-types.html#basic-character-data-type-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can perform numerous operations with character data in R. You will
+see this referred to as strings also. Strings sounds cooler so let us
+use this term for the purpose of this lesson!</p>
+<p>We will learn some basic string operations and then try our hands on a
+couple of examples.</p>
+<div id="string-operations-in-r" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> String Operations in R<a href="lesson-1-data-types.html#string-operations-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will learn about five string operations and they are:</p>
+<ul>
+<li>Concatenation</li>
+<li>String Length</li>
+<li>Changing character case</li>
+<li>Trimming whitespace</li>
+<li>String interpolation</li>
+</ul>
+<p><code>Concatenation</code> refers to joining two strings together. In R, we can use
+the <code>paste()</code> function.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBmaXJzdG5hbWUgYW5kIGxhc3RuYW1lXG5maXJzdF9uYW1lIDwtIFwiTW9uaWNhXCJcbmxhc3RfbmFtZSA8LSBcIkdlbGxlclwiXG5cbiMgQ29uY2F0ZW5hdGUgZmlyc3QgYW5kIGxhc3QgbmFtZXNcbmZ1bGxfbmFtZSA8LSBwYXN0ZShmaXJzdF9uYW1lLCBsYXN0X25hbWUpXG5mdWxsX25hbWUifQ==
+</div>
+<p>Yes and now we have the full name of every man’s dream woman all around
+the globe, thank you!</p>
+<p>We can also check for the number of characters or length of a given
+string with a function known as <code>nchar()</code></p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSAzIHN0cmluZ3NcbmdyZWV0aW5nIDwtIFwiSGVsbG8gdGhlcmVcIlxuc2VudGVuY2UgPC0gXCJUaGUgcXVpY2sgYnJvd24gZm94IGp1bXBzIG92ZXIgdGhlIGxhenkgZm94XCJcbmVtcHR5X3N0cmluZyA8LSBcIlwiXG5ub3RfZW1wdHkgPC0gXCIgXCJcblxuIyBQcmludCBsZW5ndGggb2YgYWxsIDMgc3RyaW5nc1xubmNoYXIoZ3JlZXRpbmcpXG5uY2hhcihzZW50ZW5jZSlcbm5jaGFyKGVtcHR5X3N0cmluZylcbm5jaGFyKG5vdF9lbXB0eSkifQ==
+</div>
+<p>Before we discuss what happened up there, in R you can define an empty
+string by typing two double quotes without leaving space in between the
+quotes. If there is whitespace between the two double quotes, R
+interprets the whitespace as a character and this behavior is very
+important to understand as in R, <code>"Jones"</code> and <code>"Jones "</code> are not the
+same string. We will bring this concept up again later when we talk
+about checking for equality in R.</p>
+<p>Back to the code chunk above. We can see that, R counts whitespace as a
+character when we are checking for the length of a script. Our code
+returned the length of different strings supplied to it, 11, 43, 0
+and 1. Strings are not always one word or two, they can be long
+sequences of text and in R, we can always find out the length by using
+the <code>nchar()</code> function</p>
+<p><code>Changing cases</code> in R referes to converting a string to all lower or
+upper case. The respective operations can be performed by using
+<code>tolower()</code> and <code>toupper()</code>.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENoYW5nZSB0aGUgY2FzZXMgb2YgdGhlIGZvbGxvd2luZyBzdHJpbmdzIHRvIGxvd2VyXG5uYW1lIDwtIFwiTElPTkVMIE1FU1NJXCJcbmJpa2luaV9ib3R0b20gPC0gXCJzUG9OZ0ViT2IgU3FVYVJlUGFOdFNcIlxuXG5uYW1lIDwtIHRvbG93ZXIobmFtZSlcbmJpa2luaV9ib3R0b20gPC0gdG9sb3dlcihiaWtpbmlfYm90dG9tKVxuXG4jIFByaW50IHVwZGF0ZWQgc3RyaW5nc1xubmFtZVxuYmlraW5pX2JvdHRvbVxuXG4jIENvbnZlcnQgdGhlbSB0byB1cHBlciBjYXNlIGFuZCB0aGVuIHByaW50XG5uYW1lIDwtIHRvdXBwZXIobmFtZSlcbmJpa2luaV9ib3R0b20gPC0gdG91cHBlcihiaWtpbmlfYm90dG9tKVxuXG5uYW1lXG5iaWtpbmlfYm90dG9tIn0=
+</div>
+<p>Very straightforward! These functions convert your strings to lower and
+uppercase. It is useful to note that, these functions will convert all
+alphabetic characters in your string.</p>
+<p>Trimming whitespace refers to removing leading and/or trailing
+whitespace in a string. In R, we can do that with the <code>trimws()</code>
+function like this:</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBmcnVpdCB2YXJpYWJsZVxuZnJ1aXQgPC0gXCJtYW5nbyAgICAgICAgICAgICBcIlxuXG4jIFRyaW0gd2hpdGVzcGFjZVxudHJpbXdzKGZydWl0KSJ9
+</div>
+<p>The function removed the trailing whitespace for us. What if there was
+leading and trailing whitespace? Can we trim that too? Of course!</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZhcmlhYmxlIGFuZCBhc3NpZ24gYSB2YWx1ZVxuYXJ0aXN0IDwtIFwiICByaWhhbm5hIGJhZGdhbHJpcmkgIFwiXG5cbiMgVHJpbSB3aGl0ZXNwYWNlXG50cmltd3MoYXJ0aXN0KSJ9
+</div>
+<p>That worked too! The function by default trims leading and trailing
+whitespace by default and has extra arguments if you want to do some
+more advanced, you know, trimming. In R, to find out more about how to
+use a function, highlight said function and press F1 to view the
+function documentation.</p>
+<p>Finally, we can perform a little bit of magic which may have gotten us
+in hot water if were at Salem back in the day. Just kidding this is not
+as impressive but we will talk about string interpolation. You remember
+how we said variables are important because they allow reuse later in
+our program? This might be a very good graphic illustration to see how
+that works.</p>
+<p>Supposing we have a program that takes in a user’s name and age and for
+example we have Bob who is 16 years old, says: “Happy Birthday, Bob, you
+are sixteen years old today!”, We can do that in R like this</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB1c2VyIGRldGFpbHNcbm5hbWUgPC0gXCJTYW1hbnRoYVwiXG5hZ2UgPC0gXCJ0d2VudHktdHdvXCJcblxubWVzc2FnZSA8LSBwYXN0ZShcIkhhcHB5IEJpcnRoZGF5LFwiLCBuYW1lLCBcInlvdSBhcmVcIiwgYWdlLCBcInllYXJzIG9sZCB0b2RheSFcIilcbm1lc3NhZ2UifQ==
+</div>
+<p>And that is basic string interpolation using <code>paste()</code>. We can
+interpolate as many variables into a string as we want but be sure we do
+that if we only need to. Interpolation is a dynamic way to work with
+strings so we do not have to keep defining variables over and over
+again. If for example our complex program which performs interpolation
+finishes saying happy birthday to Samantha and it gets a new input, all
+it needs to do is update the input with the new name and age and then
+just print it.</p>
+<p>Change the name and age below to your name and a theoretical age and
+then run the code to check if it works as expected. Remember to type the
+age in words.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB1c2VyIGRldGFpbHNcbm5hbWUgPC0gXCJcIlxuYWdlIDwtIFwiXCJcblxubWVzc2FnZSA8LSBwYXN0ZShcIkhhcHB5IEJpcnRoZGF5LFwiLCBuYW1lLCBcInlvdSBhcmVcIiwgYWdlLCBcInllYXJzIG9sZCB0b2RheSFcIilcbm1lc3NhZ2UifQ==
+</div>
+<p>We will go off-route and learn one final character data type operation
+using a function called <code>substr()</code>. When you get old and gray from
+programming in R you will deal with a lot of messy data an by then, this
+function will come in handy. So this <code>substr()</code> function is used to
+extract a part of a string you specify it to extract.</p>
+<p>We were supposed to learn a concept called indexing in our next chapter
+but let me introduce it to you now. It is called the index.</p>
+<p>The index is basically the position of an element in a given data
+structure. In more technical terms, it serves as a pointer or locator of
+an element or elements within a data structure. How is that relevant to
+us?</p>
+<p>Well the substr() argument in this context of extracting parts of a
+string takes 3 arguments. The first argument is the string that you want
+to work with, the start index and the end index. The syntax iis simple
+and it is as follows:</p>
+<p><code>substr(x, start, stop)</code></p>
+<p>where x is the string.</p>
+<p>Let us see this in action! Let us say you come across a scrambled word
+called “250Marie9”. This makes absolutely no sense and you want to only
+extract the name since that is something you can understand. Let us do
+this together in the code chunk below.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHN0cmluZ1xuc3RyaW5nIDwtIFwiMjUwTWFyaWU5XCJcblxuZXh0cmFjdGVkX3N0cmluZyA8LSBzdWJzdHIoc3RyaW5nLCBzdGFydCA9IDQsIHN0b3AgPSA4KVxuZXh0cmFjdGVkX3N0cmluZyJ9
+</div>
+<p>Let us try it again this time with a different string.</p>
+<p><img src="files/img/gifs/phoebe_buffay_rizz.gif" /></p>
+<p>Don’t ask me how I got that, pal but say this is how Phoebe wrote it
+down for me: “Phoebe:853 557-7020”. We can extract Phoebe’s phone number
+like this below.</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFBob2ViZSdzIG5vdGVcbnBob2ViZV9ub3RlIDwtIFwiUGhvZWJlOjg1MyA1NTctNzAyMFwiXG5cbiMgRXh0cmFjdCBoZXIgbnVtYmVyXG5waG9lYmVfbnVtYmVyIDwtIHN1YnN0cihwaG9lYmVfbm90ZSwgc3RhcnQgPSA4LCBzdG9wID0gMTkpXG5waG9lYmVfbnVtYmVyIn0=
+</div>
+<p>Perfect! Now don’t call her, please!</p>
+<p>That wraps it up for Lesson 1. I have to say here that, the biggest
+advantage and disadvantage in R is, you can mostly do what you like. You
+can be flexible and use whatever “legal” method works for you but once
+you do not understand concepts enough to apply them, your implementation
+becomes flawed and you introduce bugs into your program. So inasmuch as
+you can be flexible when writing your code, always make sure you are
+implementing solutions correctly. Failure to do this is a common source
+of errors when programming in R.</p>
+<p>There are other functions you use to convert data types into data types
+you want to work with. Did you notice when you printed <code>phoebe_number</code>
+the numbers were wrapped in quotes, making it a string? You cannot
+perform any numeric operations with that but why? In R, you can coerce a
+data type into another if it is compatible. We know that was a phone
+number for example and we can store that as a string because it has some
+symbols and whitespace in it. If we had a valid number wrapped in a
+string like <code>"85"</code>, we can convert it to an integer using the
+<code>as.integer()</code> function. watch this below:</p>
+<div data-datacamp-exercise="" data-height="500" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJzdHJpbmcgPC0gXCI4NVwiXG5zdHJpbmdcblxubnVtIDwtIGFzLmludGVnZXIoc3RyaW5nKVxubnVtIn0=
+</div>
+<p>Do you notice the output? That is how effective data type conversion
+works. There is a function to convert to each of the data types we’ve
+learned about and they are as follows:</p>
+<ul>
+<li>numeric: as.numeric()</li>
+<li>integer: as.integer()</li>
+<li>character: as.character()</li>
+<li>logical: as.logical()</li>
+</ul>
+<p>But do not worry so much about them now, we will discuss this in a
+latter lesson.</p>
+<p>Below are some links you can read further on to just understand:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators">Differences Between Assignment Operators in
+R</a></li>
+<li><a href="https://www.geeksforgeeks.org/r-data-types/">Data Types in R</a></li>
+</ul>
+</div>
+</div>
+<div id="lesson-1-code-challenge" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> LESSON 1: CODE CHALLENGE<a href="lesson-1-data-types.html#lesson-1-code-challenge" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Perform the following operations on variables a and b, which contain
+the values 15 and 3 respectively.</p>
+<ul>
+<li>add a and b</li>
+<li>subtract b from a</li>
+<li>multiply a by b</li>
+<li>divide b by a</li>
+</ul>
+<p>Define the variables a and b before you begin all your operations.
+Save the result of each operation to a variable and print your
+result after.</p></li>
+<li><p>Given the formula for finding the volume of a sphere, calculate the volume
+of a sphere with a radius of 25cm. Find out more about the formula for
+calculating this <a href="https://www.wikihow.com/Calculate-the-Volume-of-a-Sphere">here</a></p></li>
+<li><p>Given the string:
+“XXX-951ALLEYDIAGON,HOGWARTS566-418 <a href="mailto:7587dumbledore@hogwarts.edu" class="email">7587dumbledore@hogwarts.edu</a>”, perform
+the relevant operations on it and produce the following:</p>
+<ul>
+<li>address should be: 951 DIAGON ALLEY, HOGWARTS</li>
+<li>Dumbledore’s email</li>
+<li>school telephone number</li>
+</ul>
+<p>These three should be separate variables. When you obtain you complete your
+operations, ave the school address to the variable <code>address</code>, Dumbledore’s
+email as <code>email</code> and telephone as <code>tele_num</code>.</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="starting-with-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/lessons/lesson1-data-types.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

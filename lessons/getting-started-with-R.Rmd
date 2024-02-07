@@ -13,7 +13,7 @@ code, any datasets you might want to import or export, all your code objects in
 one place. This helps with file management issues as well as makes
 
 
-## DOWNLOADING R & RSTUDIO
+## Downloading R & RStudio
 You can download R 
 - [For Windows](https://cran.r-project.org/bin/windows/base/)
 - [For macOS](https://cloud.r-project.org/bin/macosx/)
@@ -25,7 +25,7 @@ you can download R [here](https://cran.r-project.org/bin/linux/)
 You can then download RStudio [here](https://posit.co/download/rstudio-desktop/). Scroll down and select your operating system and download and install it.
 
 
-## CREATING OUR FIRST R PROJECT
+## Creating Our First R Project
 
 In the top right of your screen, you should see a R in a blue box and Project set to None. Click on it, select `New Project` then select `New Directory` then `New Project` and name the project whatever you want to name it and then specify an appropriate location for your project folder on your computer and voila! You have created your first R project!
 
@@ -46,7 +46,7 @@ So the console is where you can run your R code one line at a time, you can actu
 
 WOW, you beautiful fucking stack of sunshine you wrote your first line of code in R!
 
-So we see first hand that in the console, code only gets run line by line. Enter the R Script! Think of an R Script as your text editor. You can write your program in as many lines of code you want and run it and the output will be run in the console. But where is your R Script you ask me? If you use WIndows, you can use Ctrl + Shift + N to open a new script or if you enjoy pain and want to do everything manually, Go to File in the top left of your RStudio window and select New File and then click on R Script and you'Re there!
+So we see first hand that in the console, code only gets run line by line. Enter the R Script! Think of an R Script as your text editor. You can write your program in as many lines of code you want and run it and the output will be run in the console. But where is your R Script you ask me? If you use WIndows, you can use Ctrl + Shift + N to open a new script or if you enjoy pain and want to do everything manually, Go to File in the top left of your RStudio window and select New File and then click on R Script and you're there!
 
 
 

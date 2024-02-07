@@ -2,3 +2,8 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
+rmd_files:
+  - "lessons/index.Rmd"
+  - "lessons/intro-to-R-programming.Rmd"
+  - "lessons/getting-started-with-R.Rmd"
+  - "lessons/lesson1-data-types.Rmd"

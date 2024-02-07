@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 STARTING WITH R | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 STARTING WITH R | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 STARTING WITH R | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="what-is-r.html"/>
+<link rel="next" href="lesson-1-data-types.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html"><i class="fa fa-check"></i><b>1</b> INTRO TO THIS BOOK</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html#coding-what-is-it"><i class="fa fa-check"></i><b>1.1</b> CODING? WHAT IS IT</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html#what-does-a-programmer-do"><i class="fa fa-check"></i><b>1.2</b> What does a programmer do?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="what-is-r.html"><a href="what-is-r.html"><i class="fa fa-check"></i><b>2</b> WHAT IS R</a></li>
+<li class="chapter" data-level="3" data-path="starting-with-r.html"><a href="starting-with-r.html"><i class="fa fa-check"></i><b>3</b> STARTING WITH R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="starting-with-r.html"><a href="starting-with-r.html#downloading-r-rstudio"><i class="fa fa-check"></i><b>3.1</b> Downloading R &amp; RStudio</a></li>
+<li class="chapter" data-level="3.2" data-path="starting-with-r.html"><a href="starting-with-r.html#creating-our-first-r-project"><i class="fa fa-check"></i><b>3.2</b> Creating Our First R Project</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html"><i class="fa fa-check"></i><b>4</b> LESSON 1: Data Types</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#numeric-data-type"><i class="fa fa-check"></i><b>4.1</b> Numeric Data Type</a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#integer-data-type"><i class="fa fa-check"></i><b>4.2</b> Integer Data Type</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#logical-data-type"><i class="fa fa-check"></i><b>4.3</b> Logical Data Type</a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#character-data-type"><i class="fa fa-check"></i><b>4.4</b> Character Data Type</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#variables"><i class="fa fa-check"></i><b>4.5</b> Variables</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#numeric-integer-data-types"><i class="fa fa-check"></i><b>4.6</b> Numeric &amp; Integer Data Types</a></li>
+<li class="chapter" data-level="4.7" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#basic-numeric-and-integer-data-type-operations"><i class="fa fa-check"></i><b>4.7</b> Basic Numeric and Integer Data Type Operations</a></li>
+<li class="chapter" data-level="4.8" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#basic-character-data-type-operations"><i class="fa fa-check"></i><b>4.8</b> Basic Character Data Type Operations</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#string-operations-in-r"><i class="fa fa-check"></i><b>4.8.1</b> String Operations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#lesson-1-code-challenge"><i class="fa fa-check"></i><b>4.9</b> LESSON 1: CODE CHALLENGE</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="starting-with-r" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> STARTING WITH R<a href="starting-with-r.html#starting-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>“Alright Jeff, that’s enough show me how to code in R NOW!” Woah woah easy
+tiger. So before we can start working with R, we will have to install it.</p>
+<p>Now remember. We will install the statistical language R, and we will install
+another application called RStudio. “Studio? Are we going to produce beats
+now?” No. RStudio is an IDE, short for Integrated Development Environment.</p>
+<p>Why is an IDE important. It will give us a lot of features and make the coding
+experience more pleasant to work with. YOu can create projects and have your
+code, any datasets you might want to import or export, all your code objects in
+one place. This helps with file management issues as well as makes</p>
+<div id="downloading-r-rstudio" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Downloading R &amp; RStudio<a href="starting-with-r.html#downloading-r-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can download R
+- <a href="https://cran.r-project.org/bin/windows/base/">For Windows</a>
+- <a href="https://cloud.r-project.org/bin/macosx/">For macOS</a></p>
+<p>If you like suffering and use a Linux system (Debian, Fedora/Redhat, Ubuntu),
+you can download R <a href="https://cran.r-project.org/bin/linux/">here</a></p>
+<p>You can then download RStudio <a href="https://posit.co/download/rstudio-desktop/">here</a>. Scroll down and select your operating system and download and install it.</p>
+</div>
+<div id="creating-our-first-r-project" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Creating Our First R Project<a href="starting-with-r.html#creating-our-first-r-project" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the top right of your screen, you should see a R in a blue box and Project set to None. Click on it, select <code>New Project</code> then select <code>New Directory</code> then <code>New Project</code> and name the project whatever you want to name it and then specify an appropriate location for your project folder on your computer and voila! You have created your first R project!</p>
+<p>Coding in RSTudio without a project can get really tedious and you would have to manually be specifying file paths and dealing with location issues. It is recommended that for each project you embark on, you can create a new project for that so you have everything in a central place and can work from there.</p>
+<p>So in RStudio, you should see 3 panes on your screen right now. You are probably daydreaming that you are ggoing to be a super developer and write one million lines of code and have everything in the different panes moving to make you seem like you are the guy. WAKE UP, pal!</p>
+<p>No seriously so the 3 panes we have now in RStudio, the one on the left is your console, where every R code you type should run. the two ti your right are tabbed just like console but the one on top contains your most important part, your environment. Every object your code creates will be stored here. You can explore the other tabs to familiarize yourself with the application but if you do not want to be overwhelmed, let us move to the last tab. That contains your files, every plot or chart your code creates will be printed to the plots tab and you can view packages you have installed in the packages tab. We wouldn’t really need to go into the other tabs now as I am late for a date while writing this… just kidding</p>
+<p><a href="files/img/programmer_gf.jpeg"></a></p>
+<p>In all honesty, I will not delve into other parts as I want to keep this short and simple so we build from there.</p>
+<p>So the console is where you can run your R code one line at a time, you can actually type in the console. Type your first name, wrapped in double quotes in the console in RStudio right now! If you are like me and you are called Jeff, you can type in that and wrap double quotes around it like this: “Jeff”.</p>
+<p><a href="files/img/gifs/glass.gif"></a></p>
+<p>WOW, you beautiful fucking stack of sunshine you wrote your first line of code in R!</p>
+<p>So we see first hand that in the console, code only gets run line by line. Enter the R Script! Think of an R Script as your text editor. You can write your program in as many lines of code you want and run it and the output will be run in the console. But where is your R Script you ask me? If you use WIndows, you can use Ctrl + Shift + N to open a new script or if you enjoy pain and want to do everything manually, Go to File in the top left of your RStudio window and select New File and then click on R Script and you’re there!</p>
+<p>In this lesson we have downloaded and installed R and RStudio and familiarized ourselves with what Rstudio looks like and what the different panes do. We also created a new R Script where we can write R code.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="what-is-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lesson-1-data-types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/lessons/getting-started-with-R.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
