@@ -1,0 +1,362 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# LESSON 3: Vectors
+
+Vectors are like the Swiss army knife of data structures. Almost every
+data structure can be built with vectors.
+
+Here are the main things you'd need to know about vectors:
+
+-   they are one dimensional
+-   they can only store homogeneous data types
+
+When we say vectors are one-dimensional, it means they are structured in
+a single line or sequence. To get a better picture of this, you know how
+tables for example are two-dimensional because the data they contain are
+structured in rows and columns, vectors aren't like that. They are one
+dimensional meaning they contain data in a single sequence.
+
+Vectors can store a wide range of data types but there is a catch, you
+can only stored that particular data type. This is the homogenity
+characteristic of vectors. In plain and simple english, if you store
+numeric data type in R, that vector can only contain numeric data, same
+goes for integer, character and boolean data types.
+
+In R, to create a vector, you can use the `c()` function. The `c` means
+combine or concatenate.cLet us see an example of a vector now.
+
+```{r}
+# create a vector of numbers
+vec <- c(1, 2 , 3, 4, 5, 6)
+
+vec
+```
+
+Voilà, we created a vector with numbers. We can create a vector
+containing other data types let us try character and boolean data types.
+
+```{r}
+# Vector of names of Friends
+friends <- c("Monica Geller", "Rachel Greene", "Joey Tribbiani",
+             "Phoebe Buffay", "Chandler Bing", "Ross Geller")
+
+friends
+```
+
+```{r}
+# A vector of booleans
+bool <- c(FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
+
+bool
+```
+
+We have seen how vectors are created. Do you remember how we said
+vectors are supposed to be homogeneus? Shall we attempt to mix data
+types and see if it works?
+
+![](files/img/gifs/mischief.gif)
+
+```{r}
+# Mixed vector
+mix <- c(7, 5, "Morty", "Rick", 9)
+
+mix
+```
+
+This works but in R there is something called expected behavior, I would
+like to point here. You remember how the `c()` function concatenates or
+combines elements? When the elements are not of the same data type, this
+function coerces all the elements into separate strings. Let us see how
+this works but before, in R, to check the type of an object, you can use
+the function `class()`.
+
+```{r}
+# Mixed vector
+mix <- c(7, 5, "Morty", "Rick", 9)
+
+class(mix)
+```
+
+## Other ways of creating vectors
+
+Although we gave created vectors using the combine function, we will
+learn other common ways of creating vectors.
+
+### The `:` operator
+
+In R when you use the colon operator, it creates a sequence of numbers
+from the first number on the right hand side to the left hand side.
+Don't get too twisted, this is going to be simple.
+
+```{r}
+# Create a vector of years from 2000 to 2010
+years <- 2000:2010
+
+years
+```
+
+Now time to test your hands on this. Create a vector of numbers from 100
+to 107.
+
+```{r}
+# Create a vector of numbers from 100 to 107
+
+```
+
+![](files/img/gifs/approve.gif)
+
+Bien fait!
+
+### The `seq()` function
+
+Sometimes we want to generate a sequence of numbers but not exactly in a
+regular sequence. This is where the seq() function comes in handy. We
+can use it to create a vector with a specified start, end and an
+increment value.
+
+```{r}
+# Creating a sequence from 1 to 10 by increments of 2
+vec1 <- seq(from = 1, to = 10, by = 2)
+
+vec1
+```
+
+```{r}
+# Create a sequence from 1 to 10 by increments of 2
+vec2 <- seq(from = 3, to = 36, by = 3)
+
+vec2
+```
+
+Your turn, create a sequence of vectors of multiples of 3 from 3 to 36.
+
+```{r}
+# Sequence from 3 to 36
+```
+
+### The `vector()` function
+
+We can create a vector by using the, you guessed it, `vector()`
+function! This function creates a vector of a specified length and data
+type.
+
+```{r}
+# Create a vector with the vector function()
+num_vec <- vector(mode = "numeric", length = 10)
+
+num_vec
+
+```
+
+This type of creating a vector is very handy and we will see why when we
+learn about loops and conditional statements.
+
+<br>
+
+## VECTOR OPERATIONS
+
+Remember how we performed some operations with the data types we
+learned? Vectors are next level. In fact learning how to work with
+vectors will make you understand a lot about how R does things in the
+background when you call some operations on other data structures. We
+can perform arithmetic operations on numeric and integer vectors,
+perform logical operations on any type of vector and the most important
+secret I will disclose before is, in R when you call any descriptive
+statistic function, R most likely treats that data you supplied as a
+vector in the background. Real swiss-army knife huh?
+
+Let us take a further look at what we're talking about.
+
+### Arithmetic Operations
+
+When you have a vector which is of numeric or integer type, you can
+perform arithmetic operations on that vector. Addition, subtraction,
+division, multiplication, etc. Right now seated behind my laptop typing
+this, I would probably add a piece of advice I already did when we
+talked about arithmetic operations on data types. When you are
+performing arithmetic operations in R, always remember that the rules of
+BODMAS or PEMDAS. Later, I will show you an example of how ignoring this
+can introduce bugs into your program.
+
+Let's go and arithmetic operate deez vectors!
+
+```{r}
+# Addition
+vec1 <- c(1, 2, 3, 4, 5)
+vec2 <- c(10, 3, 5, 1, 12)
+
+vec1 + vec2
+```
+
+How does R do this? When you call an arithmetic operation on two
+vectors, R initially checks if these two vectors are of the same length
+and then it adds each element at the same position in both vectors. For
+example the first element in `vec1` is added to the first element in
+`vec2`, and the process is repeated for each element in the vector.
+
+You do notice how we said R initially checks to see if the two vectors
+are of the same length? In theory, when performing arithmetic operations
+with two vectors, it is recommended to ensure the vectors are of the
+same length. You do remember our dear old friend, Mr. Expected Behavior?
+Not paying attention to him can lead to unintended behavior in our code,
+a very common source of bugs.
+
+![](files/img/gifs/bug.gif)
+
+```{r}
+# Define a vector of unequal lengths
+v1 <- 1:5
+v2 <- 10:13
+
+# Subtract v1 from v2
+v2 - v1
+```
+
+So you noticed R coughed up a result for us but produced a warning that: `Warning: longer object length is not a multiple of shorter object length`
+
+This is because we tried to perform an arithmetic operation on two vectors of unequal length. R is of course happy to cough up a result for you but look closely at the result printed after the warning, it is a vector of length 5 elements. Quick tip: in R, you can use the function `length()` to check how many elements are in a vector.
+
+Let us go over our previous code once again and dissect it further. You remember how we said we will me comfortable and learn to understand errors and warnings instead of panicking when we see them? This is one of those times!
+
+```{r}
+# Define a vector of unequal lengths
+v1 <- 1:5
+v2 <- 10:13
+
+# Print vectors
+v1
+v2
+
+# Subtract v1 from v2
+v2 - v1
+```
+
+Let us now change the elements in both vectors and make one vector longer than another to see something very strange.
+
+```{r}
+# Define two vectors
+a <- c(20, 40, 60, 80, 100)
+b <- c(50, 100, 150, 200, 250, 300, 350, 400, 450, 500)
+
+length(a)
+length(b)
+```
+
+We can see from the above code that our first vector has 5 elements while our second has 10 elements. Let us perform a subtraction operation on these vectors. We will subtract b from a and save it to a variable to print later
+
+```{r}
+# Define vectors a and b
+a <- c(20, 40, 60, 80, 100)
+b <- c(50, 100, 150, 200, 250, 300, 350, 400, 450, 500)
+
+# subtract vector a from b
+c <- b - a
+
+# print c
+c
+```
+
+In the result produced from subtracting those vectors, we see something interesting. R produced the resulting vector `c`. Why doe we now have modified elements although vector `a` ran out of elements? What R does in the background is this:
+
+```{md}
+a: 20 40 60 80 100
+b: 50 100 150 200 250 300 350 400 450 500
+
+b - a: 50-20 100-40 150-60 200-80 250-100 300-20 350-40 400-60 450-80 500-100  
+```
+
+You will notice that, after the last element in a was reached, R started over the vector a till it matched the length of vector b to ensure the operation was complete. Why is this? This behavior is because, when R is performing an arithmetic operation on two vectors of unequal lengths, it recycles every element in the shorter vector till it matches the length of the longer vector. This is unintended behavior if you are not specifically performing an operation that mimics this. So when you define two vectors to perform an arithmetic operation on them, always ensure they are of similar lengths to avoid introducing unintended behavior into your code.
+
+Time for you to do some vector operations yourself. In the next two code chunks, define two vectors, x and y, where vector x is a vector with elements from numbers 8 to 14 and vector y contains elements from 3 to 9. In the first code chunk multiply x by y and in the next, divide y by x save both results to a variable called z and print it out.
+
+```{r}
+# Define vector x and y
+
+
+
+# Perform multiplication and save to z
+
+
+# Print z
+
+```
+
+```{r}
+# Define vector x and y
+
+
+
+# Perform multiplication and save to z
+
+
+# Print z
+
+```
+
+
+Nicely done. Your results for both operations should be:
+
+`24  36  50  66  84 104 126` and `0.3750000 0.4444444 0.5000000 0.5454545 0.5833333 0.6153846 0.6428571`
+
+
+### Indexing
+
+This might be one of the most handy R concepts you might learn from this course. Indexing is a pretty valuable concept to understand. Indexing in vectors refers to the process of accessing individual elements or subsets of elements within a vector. The syntax for indexing in R with vectors is using the square-bracket notation: `vector[index]` and specifying the index of the element or elements you want to extract. It is important to also state that, while other programming languages indexing starts at 0 (LuNATICS), in R, like the sane people we are, indexing starts at 1.
+
+In R, indexing allows you to retrieve specific elements from a vector based on their position or index within the vector. We will learn about 3 types of indexing methods for this lesson and they are:
+
+- single & multi element indexing
+- logical indexing
+- negative indexing
+
+Now I left another type of creating vector out specifically so we can talk about it in this sub-lesson
+
+#### Single & Multi Element Indexing
+
+To extract or access a single element in a vector, you use square brackets and then supply the index of that element. If you are working with a named vector however, you only need to supply the name of that element.
+
+
+Let us see single element indexing in motion.
+
+```{r}
+# Define a vector
+years <- 2000:2008
+years
+
+# Extract 2004
+year_2004 <- years[5]
+year_2004
+```
+
+Simple! We supplied the number 5 and then we were able to index the year 2004.
+
+```{r}
+# Capitals
+capitals <- c("Accra", "Berlin", "Nairobi", "Paris", "Lisbon")
+
+# Extract Paris
+france_capital <- capitals[4]
+france_capital
+```
+
+Try your hands on the next single indexing activity below.
+
+```{r}
+# Fruits vector
+fruits <- c("mango", "avocado", "banana", "pawpaw", "kiwi", "watermelon", "grape")
+
+# Extract watermelon to a variable named worst_fruit and print it
+
+
+```
+
+Wow we did it together. If you really in anyway enjoy eating watermelon, kindly take a break immediately and take a long hard look at yourself in the mirror.
+
+![](files/img/gifs/sgame.gif)
+
+Now that we have completed our yearly fruitshaming activity, let us move on to multi element indexing. Sometimes you want to extract more than one element from a preexisting vector. How do we do that? We can do something called negative indexing which we will learn about later but wherever possible in your code, it is generally recommended not to alter ekements you will reuse later, so instead of deleting elements which negative indexing does, We will extract what we need and save to a new vector. Going back to our fruits vector, let us say we want to extract the top 3 fruits of all time.
+

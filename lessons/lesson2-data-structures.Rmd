@@ -1,0 +1,36 @@
+# LESSON 2: Data Structures
+
+Structure. Layout. Format. Organization. Architecture. All different words for
+the same terrible thing: BORINGGG! BOOOO!!!
+
+Now that we've finished appropriately booing the system we can now proceed to
+talk about what they are. So data structures in R are fundamental objects 
+used to store data in R. 
+
+Remember how data types were the building blocks of working with objects in R?
+Data structures are basically a collection of data types in R. Some data
+structures can only contain a homogeneous type of data while others can store 
+heterogeneous data types.
+
+In R there are a number of data structures but for this book, we will talk
+about the four main types you will work with the most. These data structures
+are:
+
+- Vector
+- Matrix
+- List
+- Dataframe
+
+We will talk about each of the next 4 types in the next four lessons and you
+will learn what they are, how to use be a better programmer at using them to
+solve problems.
+
+Just like we learned with data types, we can perform operations with data 
+structures and the operations we can do with data structures are even more 
+powerful and allow for more customization than we could with data types.
+
+But, wait a minute. Remember how We said in programming, we build on concepts?
+The same way we manipulated and worked with data types will help us work even 
+better with data structures. Without further ado, we shall go to the next
+lesson.
+
