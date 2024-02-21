@@ -1,10 +1,11 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # LESSON 3: Vectors
+
+<script src="files/js/dcl.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+```{r ,include=FALSE}
+tutorial::go_interactive(greedy=TRUE)
+```
 
 Vectors are like the Swiss army knife of data structures. Almost every
 data structure can be built with vectors.
@@ -100,16 +101,29 @@ years
 ```
 
 Now time to test your hands on this. Create a vector of numbers from 100
-to 107.
+to 107 and assign to a variable called `vec`.
 
-```{r}
+```{r, ex="vec1", type="sample-code"}
 # Create a vector of numbers from 100 to 107
 
 ```
 
+
+```{r, ex="vec1", type="solution"}
+# Create a vector of numbers from 100 to 107
+vec <- 100:107
+vec
+```
+
+```{r, ex="vec1", type="sct"}
+test_object("vec")
+test_output_contains("vec <- 100:107;vec", incorrect_msg = "Make sure to print `vec`.")
+success_msg("Successful!")
+```
+
 ![](files/img/gifs/approve.gif)
 
-Bien fait!
+Bien fait. Monica Geller approves!
 
 ### The `seq()` function
 
@@ -125,17 +139,25 @@ vec1 <- seq(from = 1, to = 10, by = 2)
 vec1
 ```
 
-```{r}
-# Create a sequence from 1 to 10 by increments of 2
-vec2 <- seq(from = 3, to = 36, by = 3)
 
-vec2
+Your turn! Create a sequence of vectors of multiples of 3 from 3 to 36 and
+assign it to `v1`.
+
+```{r, ex="vec2",type="sample-code"}
+# Sequence from 3 to 36
 ```
 
-Your turn, create a sequence of vectors of multiples of 3 from 3 to 36.
-
-```{r}
+```{r, ex="vec2",type="solution"}
 # Sequence from 3 to 36
+v1 <- seq(from = 3, to = 36, by = 3)
+v1
+```
+
+```{r, ex="vec2",type="sct"}
+test_object("v1")
+test_output_contains("v1 <- seq(from = 3, to = 36, by = 3); v1",
+                     incorrect_msg = "Make sure to print `vec`.")
+success_msg("Successful!")
 ```
 
 ### The `vector()` function
@@ -269,11 +291,23 @@ b: 50 100 150 200 250 300 350 400 450 500
 b - a: 50-20 100-40 150-60 200-80 250-100 300-20 350-40 400-60 450-80 500-100  
 ```
 
-You will notice that, after the last element in a was reached, R started over the vector a till it matched the length of vector b to ensure the operation was complete. Why is this? This behavior is because, when R is performing an arithmetic operation on two vectors of unequal lengths, it recycles every element in the shorter vector till it matches the length of the longer vector. This is unintended behavior if you are not specifically performing an operation that mimics this. So when you define two vectors to perform an arithmetic operation on them, always ensure they are of similar lengths to avoid introducing unintended behavior into your code.
+You will notice that, after the last element in a was reached, R started over
+the vector a till it matched the length of vector b to ensure the operation was
+complete. Why is this? This behavior is because, when R is performing an
+arithmetic operation on two vectors of unequal lengths, it recycles every
+element in the shorter vector till it matches the length of the longer vector.
+This is unintended behavior if you are not specifically performing an
+operation that mimics this. So when you define two vectors to perform an
+arithmetic operation on them, always ensure they are of similar lengths to
+avoid introducing unintended behavior into your code.
 
-Time for you to do some vector operations yourself. In the next two code chunks, define two vectors, x and y, where vector x is a vector with elements from numbers 8 to 14 and vector y contains elements from 3 to 9. In the first code chunk multiply x by y and in the next, divide y by x save both results to a variable called z and print it out.
+Time for you to do some vector operations yourself. In the next two code
+chunks, define two vectors, x and y, where vector x is a vector with elements
+from numbers 8 to 14 and vector y contains elements from 3 to 9. In the first
+code chunk multiply x by y and in the next, divide y by x save both results
+to a variable called z and print it out.
 
-```{r}
+```{r,ex="vec3", type="sample-code"}
 # Define vector x and y
 
 
@@ -285,7 +319,27 @@ Time for you to do some vector operations yourself. In the next two code chunks,
 
 ```
 
-```{r}
+```{r,ex="vec3", type="solution"}
+# Define vector x and y
+x <- 8:14
+y <- 3:9
+
+# Perform multiplication and save to z
+z <- x * y
+
+# Print z
+z
+```
+
+```{r,ex="vec3", type="sct"}
+test_object("x","y","z")
+test_output_contains("x <- 8:14;y <- 3:9;z <- x * y;z",
+                     incorrect_msg = "Did you assign the variables correctly?.")
+success_msg("Successful!")
+```
+
+
+```{r,ex="vec3", type="sample-code"}
 # Define vector x and y
 
 

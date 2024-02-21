@@ -7,3 +7,5 @@ rmd_files:
   - "lessons/intro-to-R-programming.Rmd"
   - "lessons/getting-started-with-R.Rmd"
   - "lessons/lesson1-data-types.Rmd"
+  - "lessons/lesson2-data-structures.Rmd"
+  - "lessons/lesson3-vectors.Rmd"

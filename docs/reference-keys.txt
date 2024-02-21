@@ -16,3 +16,13 @@ basic-numeric-and-integer-data-type-operations
 basic-character-data-type-operations
 string-operations-in-r
 lesson-1-code-challenge
+lesson-2-data-structures
+lesson-3-vectors
+other-ways-of-creating-vectors
+the-operator
+the-seq-function
+the-vector-function
+vector-operations
+arithmetic-operations
+indexing
+single-multi-element-indexing

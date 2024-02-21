@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 LESSON 3: Vectors | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 LESSON 3: Vectors | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 LESSON 3: Vectors | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lesson-2-data-structures.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html"><i class="fa fa-check"></i><b>1</b> INTRO TO THIS BOOK</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html#coding-what-is-it"><i class="fa fa-check"></i><b>1.1</b> CODING? WHAT IS IT</a></li>
+<li class="chapter" data-level="1.2" data-path="intro-to-this-book.html"><a href="intro-to-this-book.html#what-does-a-programmer-do"><i class="fa fa-check"></i><b>1.2</b> What does a programmer do?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="what-is-r.html"><a href="what-is-r.html"><i class="fa fa-check"></i><b>2</b> WHAT IS R</a></li>
+<li class="chapter" data-level="3" data-path="starting-with-r.html"><a href="starting-with-r.html"><i class="fa fa-check"></i><b>3</b> STARTING WITH R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="starting-with-r.html"><a href="starting-with-r.html#downloading-r-rstudio"><i class="fa fa-check"></i><b>3.1</b> Downloading R &amp; RStudio</a></li>
+<li class="chapter" data-level="3.2" data-path="starting-with-r.html"><a href="starting-with-r.html#creating-our-first-r-project"><i class="fa fa-check"></i><b>3.2</b> Creating Our First R Project</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html"><i class="fa fa-check"></i><b>4</b> LESSON 1: Data Types</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#numeric-data-type"><i class="fa fa-check"></i><b>4.1</b> Numeric Data Type</a></li>
+<li class="chapter" data-level="4.2" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#integer-data-type"><i class="fa fa-check"></i><b>4.2</b> Integer Data Type</a></li>
+<li class="chapter" data-level="4.3" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#logical-data-type"><i class="fa fa-check"></i><b>4.3</b> Logical Data Type</a></li>
+<li class="chapter" data-level="4.4" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#character-data-type"><i class="fa fa-check"></i><b>4.4</b> Character Data Type</a></li>
+<li class="chapter" data-level="4.5" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#variables"><i class="fa fa-check"></i><b>4.5</b> Variables</a></li>
+<li class="chapter" data-level="4.6" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#numeric-integer-data-types"><i class="fa fa-check"></i><b>4.6</b> Numeric &amp; Integer Data Types</a></li>
+<li class="chapter" data-level="4.7" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#basic-numeric-and-integer-data-type-operations"><i class="fa fa-check"></i><b>4.7</b> Basic Numeric and Integer Data Type Operations</a></li>
+<li class="chapter" data-level="4.8" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#basic-character-data-type-operations"><i class="fa fa-check"></i><b>4.8</b> Basic Character Data Type Operations</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#string-operations-in-r"><i class="fa fa-check"></i><b>4.8.1</b> String Operations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="lesson-1-data-types.html"><a href="lesson-1-data-types.html#lesson-1-code-challenge"><i class="fa fa-check"></i><b>4.9</b> LESSON 1: CODE CHALLENGE</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lesson-2-data-structures.html"><a href="lesson-2-data-structures.html"><i class="fa fa-check"></i><b>5</b> LESSON 2: Data Structures</a></li>
+<li class="chapter" data-level="6" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html"><i class="fa fa-check"></i><b>6</b> LESSON 3: Vectors</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#other-ways-of-creating-vectors"><i class="fa fa-check"></i><b>6.1</b> Other ways of creating vectors</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#the-operator"><i class="fa fa-check"></i><b>6.1.1</b> The <code>:</code> operator</a></li>
+<li class="chapter" data-level="6.1.2" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#the-seq-function"><i class="fa fa-check"></i><b>6.1.2</b> The <code>seq()</code> function</a></li>
+<li class="chapter" data-level="6.1.3" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#the-vector-function"><i class="fa fa-check"></i><b>6.1.3</b> The <code>vector()</code> function</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#vector-operations"><i class="fa fa-check"></i><b>6.2</b> VECTOR OPERATIONS</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#arithmetic-operations"><i class="fa fa-check"></i><b>6.2.1</b> Arithmetic Operations</a></li>
+<li class="chapter" data-level="6.2.2" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#indexing"><i class="fa fa-check"></i><b>6.2.2</b> Indexing</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lesson-3-vectors" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> LESSON 3: Vectors<a href="lesson-3-vectors.html#lesson-3-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<script src="files/js/dcl.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<p>Vectors are like the Swiss army knife of data structures. Almost every
+data structure can be built with vectors.</p>
+<p>Here are the main things you’d need to know about vectors:</p>
+<ul>
+<li>they are one dimensional</li>
+<li>they can only store homogeneous data types</li>
+</ul>
+<p>When we say vectors are one-dimensional, it means they are structured in
+a single line or sequence. To get a better picture of this, you know how
+tables for example are two-dimensional because the data they contain are
+structured in rows and columns, vectors aren’t like that. They are one
+dimensional meaning they contain data in a single sequence.</p>
+<p>Vectors can store a wide range of data types but there is a catch, you
+can only stored that particular data type. This is the homogenity
+characteristic of vectors. In plain and simple english, if you store
+numeric data type in R, that vector can only contain numeric data, same
+goes for integer, character and boolean data types.</p>
+<p>In R, to create a vector, you can use the <code>c()</code> function. The <code>c</code> means
+combine or concatenate.cLet us see an example of a vector now.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGNyZWF0ZSBhIHZlY3RvciBvZiBudW1iZXJzXG52ZWMgPC0gYygxLCAyICwgMywgNCwgNSwgNilcblxudmVjIn0=
+</div>
+<p>Voilà, we created a vector with numbers. We can create a vector
+containing other data types let us try character and boolean data types.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFZlY3RvciBvZiBuYW1lcyBvZiBGcmllbmRzXG5mcmllbmRzIDwtIGMoXCJNb25pY2EgR2VsbGVyXCIsIFwiUmFjaGVsIEdyZWVuZVwiLCBcIkpvZXkgVHJpYmJpYW5pXCIsXG4gICAgICAgICAgICAgXCJQaG9lYmUgQnVmZmF5XCIsIFwiQ2hhbmRsZXIgQmluZ1wiLCBcIlJvc3MgR2VsbGVyXCIpXG5cbmZyaWVuZHMifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEEgdmVjdG9yIG9mIGJvb2xlYW5zXG5ib29sIDwtIGMoRkFMU0UsIFRSVUUsIEZBTFNFLCBGQUxTRSwgVFJVRSwgRkFMU0UsIFRSVUUpXG5cbmJvb2wifQ==
+</div>
+<p>We have seen how vectors are created. Do you remember how we said
+vectors are supposed to be homogeneus? Shall we attempt to mix data
+types and see if it works?</p>
+<p><img src="files/img/gifs/mischief.gif" /></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE1peGVkIHZlY3RvclxubWl4IDwtIGMoNywgNSwgXCJNb3J0eVwiLCBcIlJpY2tcIiwgOSlcblxubWl4In0=
+</div>
+<p>This works but in R there is something called expected behavior, I would
+like to point here. You remember how the <code>c()</code> function concatenates or
+combines elements? When the elements are not of the same data type, this
+function coerces all the elements into separate strings. Let us see how
+this works but before, in R, to check the type of an object, you can use
+the function <code>class()</code>.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIE1peGVkIHZlY3RvclxubWl4IDwtIGMoNywgNSwgXCJNb3J0eVwiLCBcIlJpY2tcIiwgOSlcblxuY2xhc3MobWl4KSJ9
+</div>
+<div id="other-ways-of-creating-vectors" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Other ways of creating vectors<a href="lesson-3-vectors.html#other-ways-of-creating-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although we gave created vectors using the combine function, we will
+learn other common ways of creating vectors.</p>
+<div id="the-operator" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> The <code>:</code> operator<a href="lesson-3-vectors.html#the-operator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In R when you use the colon operator, it creates a sequence of numbers
+from the first number on the right hand side to the left hand side.
+Don’t get too twisted, this is going to be simple.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciBvZiB5ZWFycyBmcm9tIDIwMDAgdG8gMjAxMFxueWVhcnMgPC0gMjAwMDoyMDEwXG5cbnllYXJzIn0=
+</div>
+<p>Now time to test your hands on this. Create a vector of numbers from 100
+to 107 and assign to a variable called <code>vec</code>.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciBvZiBudW1iZXJzIGZyb20gMTAwIHRvIDEwNyIsInNvbHV0aW9uIjoiIyBDcmVhdGUgYSB2ZWN0b3Igb2YgbnVtYmVycyBmcm9tIDEwMCB0byAxMDdcbnZlYyA8LSAxMDA6MTA3XG52ZWMiLCJzY3QiOiJ0ZXN0X29iamVjdChcInZlY1wiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXCJ2ZWMgPC0gMTAwOjEwNzt2ZWNcIiwgaW5jb3JyZWN0X21zZyA9IFwiTWFrZSBzdXJlIHRvIHByaW50IGB2ZWNgLlwiKVxuc3VjY2Vzc19tc2coXCJTdWNjZXNzZnVsIVwiKSJ9
+</div>
+<p><img src="files/img/gifs/approve.gif" /></p>
+<p>Bien fait. Monica Geller approves!</p>
+</div>
+<div id="the-seq-function" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> The <code>seq()</code> function<a href="lesson-3-vectors.html#the-seq-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes we want to generate a sequence of numbers but not exactly in a
+regular sequence. This is where the seq() function comes in handy. We
+can use it to create a vector with a specified start, end and an
+increment value.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0aW5nIGEgc2VxdWVuY2UgZnJvbSAxIHRvIDEwIGJ5IGluY3JlbWVudHMgb2YgMlxudmVjMSA8LSBzZXEoZnJvbSA9IDEsIHRvID0gMTAsIGJ5ID0gMilcblxudmVjMSJ9
+</div>
+<p>Your turn! Create a sequence of vectors of multiples of 3 from 3 to 36 and
+assign it to <code>v1</code>.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFNlcXVlbmNlIGZyb20gMyB0byAzNiIsInNvbHV0aW9uIjoiIyBTZXF1ZW5jZSBmcm9tIDMgdG8gMzZcbnYxIDwtIHNlcShmcm9tID0gMywgdG8gPSAzNiwgYnkgPSAzKVxudjEiLCJzY3QiOiJ0ZXN0X29iamVjdChcInYxXCIpXG50ZXN0X291dHB1dF9jb250YWlucyhcInYxIDwtIHNlcShmcm9tID0gMywgdG8gPSAzNiwgYnkgPSAzKTsgdjFcIixcbiAgICAgICAgICAgICAgICAgICAgIGluY29ycmVjdF9tc2cgPSBcIk1ha2Ugc3VyZSB0byBwcmludCBgdmVjYC5cIilcbnN1Y2Nlc3NfbXNnKFwiU3VjY2Vzc2Z1bCFcIikifQ==
+</div>
+</div>
+<div id="the-vector-function" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> The <code>vector()</code> function<a href="lesson-3-vectors.html#the-vector-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can create a vector by using the, you guessed it, <code>vector()</code>
+function! This function creates a vector of a specified length and data
+type.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciB3aXRoIHRoZSB2ZWN0b3IgZnVuY3Rpb24oKVxubnVtX3ZlYyA8LSB2ZWN0b3IobW9kZSA9IFwibnVtZXJpY1wiLCBsZW5ndGggPSAxMClcblxubnVtX3ZlYyJ9
+</div>
+<p>This type of creating a vector is very handy and we will see why when we
+learn about loops and conditional statements.</p>
+<p><br></p>
+</div>
+</div>
+<div id="vector-operations" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> VECTOR OPERATIONS<a href="lesson-3-vectors.html#vector-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Remember how we performed some operations with the data types we
+learned? Vectors are next level. In fact learning how to work with
+vectors will make you understand a lot about how R does things in the
+background when you call some operations on other data structures. We
+can perform arithmetic operations on numeric and integer vectors,
+perform logical operations on any type of vector and the most important
+secret I will disclose before is, in R when you call any descriptive
+statistic function, R most likely treats that data you supplied as a
+vector in the background. Real swiss-army knife huh?</p>
+<p>Let us take a further look at what we’re talking about.</p>
+<div id="arithmetic-operations" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Arithmetic Operations<a href="lesson-3-vectors.html#arithmetic-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you have a vector which is of numeric or integer type, you can
+perform arithmetic operations on that vector. Addition, subtraction,
+division, multiplication, etc. Right now seated behind my laptop typing
+this, I would probably add a piece of advice I already did when we
+talked about arithmetic operations on data types. When you are
+performing arithmetic operations in R, always remember that the rules of
+BODMAS or PEMDAS. Later, I will show you an example of how ignoring this
+can introduce bugs into your program.</p>
+<p>Let’s go and arithmetic operate deez vectors!</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEFkZGl0aW9uXG52ZWMxIDwtIGMoMSwgMiwgMywgNCwgNSlcbnZlYzIgPC0gYygxMCwgMywgNSwgMSwgMTIpXG5cbnZlYzEgKyB2ZWMyIn0=
+</div>
+<p>How does R do this? When you call an arithmetic operation on two
+vectors, R initially checks if these two vectors are of the same length
+and then it adds each element at the same position in both vectors. For
+example the first element in <code>vec1</code> is added to the first element in
+<code>vec2</code>, and the process is repeated for each element in the vector.</p>
+<p>You do notice how we said R initially checks to see if the two vectors
+are of the same length? In theory, when performing arithmetic operations
+with two vectors, it is recommended to ensure the vectors are of the
+same length. You do remember our dear old friend, Mr. Expected Behavior?
+Not paying attention to him can lead to unintended behavior in our code,
+a very common source of bugs.</p>
+<p><img src="files/img/gifs/bug.gif" /></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZlY3RvciBvZiB1bmVxdWFsIGxlbmd0aHNcbnYxIDwtIDE6NVxudjIgPC0gMTA6MTNcblxuIyBTdWJ0cmFjdCB2MSBmcm9tIHYyXG52MiAtIHYxIn0=
+</div>
+<p>So you noticed R coughed up a result for us but produced a warning that: <code>Warning: longer object length is not a multiple of shorter object length</code></p>
+<p>This is because we tried to perform an arithmetic operation on two vectors of unequal length. R is of course happy to cough up a result for you but look closely at the result printed after the warning, it is a vector of length 5 elements. Quick tip: in R, you can use the function <code>length()</code> to check how many elements are in a vector.</p>
+<p>Let us go over our previous code once again and dissect it further. You remember how we said we will me comfortable and learn to understand errors and warnings instead of panicking when we see them? This is one of those times!</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZlY3RvciBvZiB1bmVxdWFsIGxlbmd0aHNcbnYxIDwtIDE6NVxudjIgPC0gMTA6MTNcblxuIyBQcmludCB2ZWN0b3JzXG52MVxudjJcblxuIyBTdWJ0cmFjdCB2MSBmcm9tIHYyXG52MiAtIHYxIn0=
+</div>
+<p>Let us now change the elements in both vectors and make one vector longer than another to see something very strange.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB0d28gdmVjdG9yc1xuYSA8LSBjKDIwLCA0MCwgNjAsIDgwLCAxMDApXG5iIDwtIGMoNTAsIDEwMCwgMTUwLCAyMDAsIDI1MCwgMzAwLCAzNTAsIDQwMCwgNDUwLCA1MDApXG5cbmxlbmd0aChhKVxubGVuZ3RoKGIpIn0=
+</div>
+<p>We can see from the above code that our first vector has 5 elements while our second has 10 elements. Let us perform a subtraction operation on these vectors. We will subtract b from a and save it to a variable to print later</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB2ZWN0b3JzIGEgYW5kIGJcbmEgPC0gYygyMCwgNDAsIDYwLCA4MCwgMTAwKVxuYiA8LSBjKDUwLCAxMDAsIDE1MCwgMjAwLCAyNTAsIDMwMCwgMzUwLCA0MDAsIDQ1MCwgNTAwKVxuXG4jIHN1YnRyYWN0IHZlY3RvciBhIGZyb20gYlxuYyA8LSBiIC0gYVxuXG4jIHByaW50IGNcbmMifQ==
+</div>
+<p>In the result produced from subtracting those vectors, we see something interesting. R produced the resulting vector <code>c</code>. Why doe we now have modified elements although vector <code>a</code> ran out of elements? What R does in the background is this:</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6Im1kIiwic2FtcGxlIjoiYTogMjAgNDAgNjAgODAgMTAwXG5iOiA1MCAxMDAgMTUwIDIwMCAyNTAgMzAwIDM1MCA0MDAgNDUwIDUwMFxuXG5iIC0gYTogNTAtMjAgMTAwLTQwIDE1MC02MCAyMDAtODAgMjUwLTEwMCAzMDAtMjAgMzUwLTQwIDQwMC02MCA0NTAtODAgNTAwLTEwMCAgIn0=
+</div>
+<p>You will notice that, after the last element in a was reached, R started over
+the vector a till it matched the length of vector b to ensure the operation was
+complete. Why is this? This behavior is because, when R is performing an
+arithmetic operation on two vectors of unequal lengths, it recycles every
+element in the shorter vector till it matches the length of the longer vector.
+This is unintended behavior if you are not specifically performing an
+operation that mimics this. So when you define two vectors to perform an
+arithmetic operation on them, always ensure they are of similar lengths to
+avoid introducing unintended behavior into your code.</p>
+<p>Time for you to do some vector operations yourself. In the next two code
+chunks, define two vectors, x and y, where vector x is a vector with elements
+from numbers 8 to 14 and vector y contains elements from 3 to 9. In the first
+code chunk multiply x by y and in the next, divide y by x save both results
+to a variable called z and print it out.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB2ZWN0b3IgeCBhbmQgeVxuXG5cblxuIyBQZXJmb3JtIG11bHRpcGxpY2F0aW9uIGFuZCBzYXZlIHRvIHpcblxuXG4jIFByaW50IHoiLCJzb2x1dGlvbiI6IiMgRGVmaW5lIHZlY3RvciB4IGFuZCB5XG54IDwtIDg6MTRcbnkgPC0gMzo5XG5cbiMgUGVyZm9ybSBtdWx0aXBsaWNhdGlvbiBhbmQgc2F2ZSB0byB6XG56IDwtIHggKiB5XG5cbiMgUHJpbnQgelxueiIsInNjdCI6InRlc3Rfb2JqZWN0KFwieFwiLFwieVwiLFwielwiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXCJ4IDwtIDg6MTQ7eSA8LSAzOjk7eiA8LSB4ICogeTt6XCIsXG4gICAgICAgICAgICAgICAgICAgICBpbmNvcnJlY3RfbXNnID0gXCJEaWQgeW91IGFzc2lnbiB0aGUgdmFyaWFibGVzIGNvcnJlY3RseT8uXCIpXG5zdWNjZXNzX21zZyhcIlN1Y2Nlc3NmdWwhXCIpIn0=
+</div>
+<p>Nicely done. Your results for both operations should be:</p>
+<p><code>24  36  50  66  84 104 126</code> and <code>0.3750000 0.4444444 0.5000000 0.5454545 0.5833333 0.6153846 0.6428571</code></p>
+</div>
+<div id="indexing" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Indexing<a href="lesson-3-vectors.html#indexing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This might be one of the most handy R concepts you might learn from this course. Indexing is a pretty valuable concept to understand. Indexing in vectors refers to the process of accessing individual elements or subsets of elements within a vector. The syntax for indexing in R with vectors is using the square-bracket notation: <code>vector[index]</code> and specifying the index of the element or elements you want to extract. It is important to also state that, while other programming languages indexing starts at 0 (LuNATICS), in R, like the sane people we are, indexing starts at 1.</p>
+<p>In R, indexing allows you to retrieve specific elements from a vector based on their position or index within the vector. We will learn about 3 types of indexing methods for this lesson and they are:</p>
+<ul>
+<li>single &amp; multi element indexing</li>
+<li>logical indexing</li>
+<li>negative indexing</li>
+</ul>
+<p>Now I left another type of creating vector out specifically so we can talk about it in this sub-lesson</p>
+<div id="single-multi-element-indexing" class="section level4 hasAnchor" number="6.2.2.1">
+<h4><span class="header-section-number">6.2.2.1</span> Single &amp; Multi Element Indexing<a href="lesson-3-vectors.html#single-multi-element-indexing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To extract or access a single element in a vector, you use square brackets and then supply the index of that element. If you are working with a named vector however, you only need to supply the name of that element.</p>
+<p>Let us see single element indexing in motion.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZlY3RvclxueWVhcnMgPC0gMjAwMDoyMDA4XG55ZWFyc1xuXG4jIEV4dHJhY3QgMjAwNFxueWVhcl8yMDA0IDwtIHllYXJzWzVdXG55ZWFyXzIwMDQifQ==
+</div>
+<p>Simple! We supplied the number 5 and then we were able to index the year 2004.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENhcGl0YWxzXG5jYXBpdGFscyA8LSBjKFwiQWNjcmFcIiwgXCJCZXJsaW5cIiwgXCJOYWlyb2JpXCIsIFwiUGFyaXNcIiwgXCJMaXNib25cIilcblxuIyBFeHRyYWN0IFBhcmlzXG5mcmFuY2VfY2FwaXRhbCA8LSBjYXBpdGFsc1s0XVxuZnJhbmNlX2NhcGl0YWwifQ==
+</div>
+<p>Try your hands on the next single indexing activity below.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEZydWl0cyB2ZWN0b3JcbmZydWl0cyA8LSBjKFwibWFuZ29cIiwgXCJhdm9jYWRvXCIsIFwiYmFuYW5hXCIsIFwicGF3cGF3XCIsIFwia2l3aVwiLCBcIndhdGVybWVsb25cIiwgXCJncmFwZVwiKVxuXG4jIEV4dHJhY3Qgd2F0ZXJtZWxvbiB0byBhIHZhcmlhYmxlIG5hbWVkIHdvcnN0X2ZydWl0IGFuZCBwcmludCBpdCJ9
+</div>
+<p>Wow we did it together. If you really in anyway enjoy eating watermelon, kindly take a break immediately and take a long hard look at yourself in the mirror.</p>
+<p><img src="files/img/gifs/sgame.gif" /></p>
+<p>Now that we have completed our yearly fruitshaming activity, let us move on to multi element indexing. Sometimes you want to extract more than one element from a preexisting vector. How do we do that? We can do something called negative indexing which we will learn about later but wherever possible in your code, it is generally recommended not to alter ekements you will reuse later, so instead of deleting elements which negative indexing does, We will extract what we need and save to a new vector. Going back to our fruits vector, let us say we want to extract the top 3 fruits of all time.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lesson-2-data-structures.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/lessons/lesson3-vectors.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
