@@ -26,3 +26,11 @@ vector-operations
 arithmetic-operations
 indexing
 single-multi-element-indexing
+logical-indexing
+summary-statistics
+mean
+median
+mode
+standard-deviation
+minimum-and-maximum
+important

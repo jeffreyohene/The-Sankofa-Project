@@ -113,6 +113,7 @@
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#arithmetic-operations"><i class="fa fa-check"></i><b>6.2.1</b> Arithmetic Operations</a></li>
 <li class="chapter" data-level="6.2.2" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#indexing"><i class="fa fa-check"></i><b>6.2.2</b> Indexing</a></li>
+<li class="chapter" data-level="6.2.3" data-path="lesson-3-vectors.html"><a href="lesson-3-vectors.html#summary-statistics"><i class="fa fa-check"></i><b>6.2.3</b> SUMMARY STATISTICS</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -158,7 +159,7 @@ characteristic of vectors. In plain and simple english, if you store
 numeric data type in R, that vector can only contain numeric data, same
 goes for integer, character and boolean data types.</p>
 <p>In R, to create a vector, you can use the <code>c()</code> function. The <code>c</code> means
-combine or concatenate.cLet us see an example of a vector now.</p>
+combine or concatenate.Let us see an example of a vector now.</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGNyZWF0ZSBhIHZlY3RvciBvZiBudW1iZXJzXG52ZWMgPC0gYygxLCAyICwgMywgNCwgNSwgNilcblxudmVjIn0=
 </div>
@@ -275,21 +276,34 @@ a very common source of bugs.</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZlY3RvciBvZiB1bmVxdWFsIGxlbmd0aHNcbnYxIDwtIDE6NVxudjIgPC0gMTA6MTNcblxuIyBTdWJ0cmFjdCB2MSBmcm9tIHYyXG52MiAtIHYxIn0=
 </div>
-<p>So you noticed R coughed up a result for us but produced a warning that: <code>Warning: longer object length is not a multiple of shorter object length</code></p>
-<p>This is because we tried to perform an arithmetic operation on two vectors of unequal length. R is of course happy to cough up a result for you but look closely at the result printed after the warning, it is a vector of length 5 elements. Quick tip: in R, you can use the function <code>length()</code> to check how many elements are in a vector.</p>
-<p>Let us go over our previous code once again and dissect it further. You remember how we said we will me comfortable and learn to understand errors and warnings instead of panicking when we see them? This is one of those times!</p>
+<p>So you noticed R coughed up a result for us but produced a warning that:
+<code>Warning: longer object length is not a multiple of shorter object length</code></p>
+<p>This is because we tried to perform an arithmetic operation on two vectors of
+unequal length. R is of course happy to cough up a result for you but look
+closely at the result printed after the warning, it is a vector of length 5
+elements. Quick tip: in R, you can use the function <code>length()</code> to check how
+many elements are in a vector.</p>
+<p>Let us go over our previous code once again and dissect it further. You
+remember how we said we will me comfortable and learn to understand errors and
+warnings instead of panicking when we see them? This is one of those times!</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZlY3RvciBvZiB1bmVxdWFsIGxlbmd0aHNcbnYxIDwtIDE6NVxudjIgPC0gMTA6MTNcblxuIyBQcmludCB2ZWN0b3JzXG52MVxudjJcblxuIyBTdWJ0cmFjdCB2MSBmcm9tIHYyXG52MiAtIHYxIn0=
 </div>
-<p>Let us now change the elements in both vectors and make one vector longer than another to see something very strange.</p>
+<p>Let us now change the elements in both vectors and make one vector longer than
+another to see something very strange.</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB0d28gdmVjdG9yc1xuYSA8LSBjKDIwLCA0MCwgNjAsIDgwLCAxMDApXG5iIDwtIGMoNTAsIDEwMCwgMTUwLCAyMDAsIDI1MCwgMzAwLCAzNTAsIDQwMCwgNDUwLCA1MDApXG5cbmxlbmd0aChhKVxubGVuZ3RoKGIpIn0=
 </div>
-<p>We can see from the above code that our first vector has 5 elements while our second has 10 elements. Let us perform a subtraction operation on these vectors. We will subtract b from a and save it to a variable to print later</p>
+<p>We can see from the above code that our first vector has 5 elements while our
+second has 10 elements. Let us perform a subtraction operation on these
+vectors. We will subtract b from a and save it to a variable to print later</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB2ZWN0b3JzIGEgYW5kIGJcbmEgPC0gYygyMCwgNDAsIDYwLCA4MCwgMTAwKVxuYiA8LSBjKDUwLCAxMDAsIDE1MCwgMjAwLCAyNTAsIDMwMCwgMzUwLCA0MDAsIDQ1MCwgNTAwKVxuXG4jIHN1YnRyYWN0IHZlY3RvciBhIGZyb20gYlxuYyA8LSBiIC0gYVxuXG4jIHByaW50IGNcbmMifQ==
 </div>
-<p>In the result produced from subtracting those vectors, we see something interesting. R produced the resulting vector <code>c</code>. Why doe we now have modified elements although vector <code>a</code> ran out of elements? What R does in the background is this:</p>
+<p>In the result produced from subtracting those vectors, we see something
+interesting. R produced the resulting vector <code>c</code>. Why doe we now have modified
+elements although vector <code>a</code> ran out of elements? What R does in the background
+is this:</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6Im1kIiwic2FtcGxlIjoiYTogMjAgNDAgNjAgODAgMTAwXG5iOiA1MCAxMDAgMTUwIDIwMCAyNTAgMzAwIDM1MCA0MDAgNDUwIDUwMFxuXG5iIC0gYTogNTAtMjAgMTAwLTQwIDE1MC02MCAyMDAtODAgMjUwLTEwMCAzMDAtMjAgMzUwLTQwIDQwMC02MCA0NTAtODAgNTAwLTEwMCAgIn0=
 </div>
@@ -310,22 +324,32 @@ to a variable called z and print it out.</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSB2ZWN0b3IgeCBhbmQgeVxuXG5cblxuIyBQZXJmb3JtIG11bHRpcGxpY2F0aW9uIGFuZCBzYXZlIHRvIHpcblxuXG4jIFByaW50IHoiLCJzb2x1dGlvbiI6IiMgRGVmaW5lIHZlY3RvciB4IGFuZCB5XG54IDwtIDg6MTRcbnkgPC0gMzo5XG5cbiMgUGVyZm9ybSBtdWx0aXBsaWNhdGlvbiBhbmQgc2F2ZSB0byB6XG56IDwtIHggKiB5XG5cbiMgUHJpbnQgelxueiIsInNjdCI6InRlc3Rfb2JqZWN0KFwieFwiLFwieVwiLFwielwiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXCJ4IDwtIDg6MTQ7eSA8LSAzOjk7eiA8LSB4ICogeTt6XCIsXG4gICAgICAgICAgICAgICAgICAgICBpbmNvcnJlY3RfbXNnID0gXCJEaWQgeW91IGFzc2lnbiB0aGUgdmFyaWFibGVzIGNvcnJlY3RseT8uXCIpXG5zdWNjZXNzX21zZyhcIlN1Y2Nlc3NmdWwhXCIpIn0=
 </div>
-<p>Nicely done. Your results for both operations should be:</p>
-<p><code>24  36  50  66  84 104 126</code> and <code>0.3750000 0.4444444 0.5000000 0.5454545 0.5833333 0.6153846 0.6428571</code></p>
 </div>
 <div id="indexing" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Indexing<a href="lesson-3-vectors.html#indexing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This might be one of the most handy R concepts you might learn from this course. Indexing is a pretty valuable concept to understand. Indexing in vectors refers to the process of accessing individual elements or subsets of elements within a vector. The syntax for indexing in R with vectors is using the square-bracket notation: <code>vector[index]</code> and specifying the index of the element or elements you want to extract. It is important to also state that, while other programming languages indexing starts at 0 (LuNATICS), in R, like the sane people we are, indexing starts at 1.</p>
-<p>In R, indexing allows you to retrieve specific elements from a vector based on their position or index within the vector. We will learn about 3 types of indexing methods for this lesson and they are:</p>
+<p>This might be one of the most handy R concepts you might learn from this
+course. Indexing is a pretty valuable concept to understand. Indexing in
+vectors refers to the process of accessing individual elements or subsets of
+elements within a vector. The syntax for indexing in R with vectors is using
+the square-bracket notation: <code>vector[index]</code> and specifying the index of the
+element or elements you want to extract. It is important to also state that,
+while other programming languages indexing starts at 0 (LUNATICS!), in R, like
+the sane people we are, indexing starts at 1.</p>
+<p>In R, indexing allows you to retrieve specific elements from a vector based on
+their position or index within the vector. We will learn about 3 types of
+indexing methods for this lesson and they are:</p>
 <ul>
 <li>single &amp; multi element indexing</li>
 <li>logical indexing</li>
 <li>negative indexing</li>
 </ul>
-<p>Now I left another type of creating vector out specifically so we can talk about it in this sub-lesson</p>
+<p>Now I left another type of creating vector out specifically so we can talk
+about it in this sub-lesson</p>
 <div id="single-multi-element-indexing" class="section level4 hasAnchor" number="6.2.2.1">
 <h4><span class="header-section-number">6.2.2.1</span> Single &amp; Multi Element Indexing<a href="lesson-3-vectors.html#single-multi-element-indexing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>To extract or access a single element in a vector, you use square brackets and then supply the index of that element. If you are working with a named vector however, you only need to supply the name of that element.</p>
+<p>To extract or access a single element in a vector, you use square brackets and
+then supply the index of that element. If you are working with a named vector
+however, you only need to supply the name of that element.</p>
 <p>Let us see single element indexing in motion.</p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIERlZmluZSBhIHZlY3RvclxueWVhcnMgPC0gMjAwMDoyMDA4XG55ZWFyc1xuXG4jIEV4dHJhY3QgMjAwNFxueWVhcl8yMDA0IDwtIHllYXJzWzVdXG55ZWFyXzIwMDQifQ==
@@ -340,7 +364,203 @@ eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEZydWl0cyB2ZWN0b3JcbmZydWl0cyA8LSBjKFwibWFu
 </div>
 <p>Wow we did it together. If you really in anyway enjoy eating watermelon, kindly take a break immediately and take a long hard look at yourself in the mirror.</p>
 <p><img src="files/img/gifs/sgame.gif" /></p>
-<p>Now that we have completed our yearly fruitshaming activity, let us move on to multi element indexing. Sometimes you want to extract more than one element from a preexisting vector. How do we do that? We can do something called negative indexing which we will learn about later but wherever possible in your code, it is generally recommended not to alter ekements you will reuse later, so instead of deleting elements which negative indexing does, We will extract what we need and save to a new vector. Going back to our fruits vector, let us say we want to extract the top 3 fruits of all time.</p>
+<p>Now that we have completed our daily fruit-shaming activity, let us move on to
+multi-element indexing. Sometimes you want to extract more than one element
+from a preexisting vector. How do we do that? We can do something called
+negative indexing which we will learn about later but wherever possible in your
+code, it is generally recommended not to alter elements you will reuse later,
+so instead of deleting elements which negative indexing does, we will extract
+what we need and save to a new vector. Going back to our fruits vector, let us
+say we want to extract the top 3 fruits of all time.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEZydWl0cyB2ZWN0b3JcbmZydWl0cyA8LSBjKFwibWFuZ29cIiwgXCJhdm9jYWRvXCIsIFwiYmFuYW5hXCIsIFwicGF3cGF3XCIsIFwia2l3aVwiLCBcIndhdGVybWVsb25cIiwgXCJncmFwZVwiKVxuXG4jIEluZGV4IGJlc3QgZnJ1aXRzXG5nb2F0X2ZydWl0cyA8LSBmcnVpdHNbMTozXVxuZ29hdF9mcnVpdHMifQ==
+</div>
+<p>You noticed here we used our old friend the colon operator. The colon operator
+is not just used to create vectors you can also use it to specify a range to
+index a vector with. It is very handy when you want to generate a consecutive
+sequence and use that sequence to index a vector but sometimes, just sometimes,
+you would want to index elements in a vector that are not in a consecutive
+sequence. I know by now you’re saying what the hell is this guy on about but
+stay with me. Let me show you an example quickly, we shall use our fruit
+vector once again</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEZydWl0cyB2ZWN0b3JcbmZydWl0cyA8LSBjKFwibWFuZ29cIiwgXCJhdm9jYWRvXCIsIFwiYmFuYW5hXCIsIFwicGF3cGF3XCIsIFwia2l3aVwiLCBcIndhdGVybWVsb25cIiwgXCJncmFwZVwiKVxuXG4jIEluZGV4IG1hbmdvLCBiYW5hbmEsIGtpd2kgYW5kIGdyYXBlXG5uZXdfZnJ1aXRzIDwtIGZydWl0c1tjKDEsIDMsIDUsIDcpXVxubmV3X2ZydWl0cyJ9
+</div>
+<p>See there, we used a vector to index another vector. But this time, because the
+elements were not at consecutive indices, that is, indices 1, 2, 3, 4, 5, 6, 7
+and so on, we had to supply the indices of the elements we wanted to extract as
+a vector to be able to subset those elements.</p>
+<p>You remember the <code>:</code> operator we used to subset the best fruits of all time?
+Using that was a shortcut and we could have also used a vector to subset the
+those fruits like this</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEZydWl0cyB2ZWN0b3JcbmZydWl0cyA8LSBjKFwibWFuZ29cIiwgXCJhdm9jYWRvXCIsIFwiYmFuYW5hXCIsIFwicGF3cGF3XCIsIFwia2l3aVwiLCBcIndhdGVybWVsb25cIiwgXCJncmFwZVwiKVxuXG4jIEluZGV4IGJlc3QgZnJ1aXRzXG5nb2F0X2ZydWl0cyA8LSBmcnVpdHNbYygxLCAyLCAzKV1cbmdvYXRfZnJ1aXRzIn0=
+</div>
+<p>This worked too. We did not use the colon operator but we were still able to
+subset the same elements. You will find that in R, there are numerous ways to
+solve a problem and the selection of a solution for any problem or task you may
+encounter is dependent on that specific task.</p>
+</div>
+<div id="logical-indexing" class="section level4 hasAnchor" number="6.2.2.2">
+<h4><span class="header-section-number">6.2.2.2</span> Logical Indexing<a href="lesson-3-vectors.html#logical-indexing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Logical indexing in R refers to the process of using logical vectors to subset
+or extract elements from a data structure based on a given condition.</p>
+<p>So in indexing a vector with a logical vector, you need to first create the
+condition you want to subset for then use that logical vector to subset the
+initial vector you want to index to extract only elements that meet the
+specified condition.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvclxudmVjIDwtIGMoNTQsIDEwLCAyMSwgMzAsIDQwLCAxMiwgOTgsIDUwLCA4NSwgMTMpXG5cbiMgQ3JlYXRlIGEgbG9naWNhbCB2ZWN0b3IgaW5kaWNhdGluZyB3aGljaCBlbGVtZW50cyBhcmUgZ3JlYXRlciB0aGFuIDMwXG5sb2dpY2FsX3ZlY3RvciA8LSB2ZWMgPiAzMFxuXG4jIFVzZSBsb2dpY2FsIGluZGV4aW5nIHRvIHN1YnNldCBlbGVtZW50cyBncmVhdGVyIHRoYW4gMzBcbnN1YnNldF92ZWMgPC0gdmVjW2xvZ2ljYWxfdmVjdG9yXVxuXG4jIFByaW50IHRoZSByZXN1bHRcbnN1YnNldF92ZWMifQ==
+</div>
+</div>
+</div>
+<div id="summary-statistics" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> SUMMARY STATISTICS<a href="lesson-3-vectors.html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="files/img/gifs/summary.gif" /></p>
+<p>Summary statistics are numerical values that summarize and describe features
+of a range of values. They provide insights into the characteristics and
+distribution of the data. For this lesson we will talk about mean, median,
+mode, standard deviation, minimum, maximum and variance. You will be performing
+summary statistic operations mostly on dataframes but in the background R
+treats this columns you will try to derive summary statistics from so we will
+see how to do that. We will do a lesson on summary statistics and its
+applications in R from a theoretical and then a practical point of view but
+this section will talk we will serve summary statistics as an entrée (I’m
+fresh of my daily french duolingo lesson lol).</p>
+<div id="mean" class="section level4 hasAnchor" number="6.2.3.1">
+<h4><span class="header-section-number">6.2.3.1</span> Mean<a href="lesson-3-vectors.html#mean" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The mean is the average value of a set of given values. It is calculated by
+adding up all the values in the given set of numbers and then dividing by the
+total number of values in that distribution. The function to do this is:
+<code>mean()</code>.</p>
+<p>Let us see how to calculate the mean of a given range of values in R. The data structure we will use in this lesson is vectors.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciBvZiBudW1iZXJzXG52ZWMgPC0gc2VxKGZyb209MSx0bz0yMSwgYnk9MylcblxuIyBDYWxjdWxhdGUgdGhlIG1lYW4gb2YgdmVjXG5tZWFuKHZlYykifQ==
+</div>
+<p>Perfect! We were able to calculate the mean of vec and we got the answer 10.
+This is how you calculate the mean. Try your hands on calculating the mean of a
+vector called <code>v1</code> which contains a sequence of numbers from 28 to 50. You can
+use the colon operator to create this <code>v1</code> and calculate the mean.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciBuYW1lZCB2MSB0aHVhdCBjb250YWlucyBudW1iZXJzIGZyb20gMjggdG8gNTBcblxuXG4jIENhbGN1bGF0ZSB0aGUgbWVhbiBvZiB2MSJ9
+</div>
+</div>
+<div id="median" class="section level4 hasAnchor" number="6.2.3.2">
+<h4><span class="header-section-number">6.2.3.2</span> Median<a href="lesson-3-vectors.html#median" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The median is a measure of central tendency that represents the middle value of
+a given set of values when that set of values is ordered from the least to the
+greatest. In R, when you call the median function, the rearrangement from
+least to greatest value is automatically performed in the background. Cool, no?</p>
+<p>There is a little thing I would like to include here. If the length of the
+range of values that the median is being calculated for is odd, the median will
+be the middle value however if the range of values is an even number of values,
+the median is the average of the two middle values.</p>
+<p><img src="files/img/gifs/math-hmm.gif" /></p>
+<p>If this confused you, you definitely hate math but hold on, I will show what
+this means in an example below.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciB3aXRoIGFuIG9kZCBudW1iZXIgb2YgdmFsdWVzXG5vZGRfdmFsdWVzIDwtIGMoMSwgMiwgMywgNCwgNSwgNiwgNylcblxuIyBDaGVjayBsZW5ndGggb2Ygb2RkX3ZhbHVlc1xubGVuZ3RoKG9kZF92YWx1ZXMpXG5cbiMgQ2FsY3VsYXRlIHRoZSBtZWRpYW5cbm1lZGlhbihvZGRfdmFsdWVzKSJ9
+</div>
+<p>In the example above, the vector <code>odd_values</code> has 7 values as printed by the
+result of the <code>length()</code> function called on <code>odd_values</code>. So the median is
+going to be the middle number of the set of values of the vector <code>odd_values</code>.</p>
+<p>Let us see another example with a range of values whose length is even.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciB3aXRoIGFuIGV2ZW4gbnVtYmVyIG9mIHZhbHVlc1xuZXZlbl92YWx1ZXMgPC0gYygxLCAyLCAzLCA0LCA1LCA2LCA3LCA4KVxuXG4jIENoZWNrIGxlbmd0aCBvZiBldmVuX3ZhbHVlc1xubGVuZ3RoKGV2ZW5fdmFsdWVzKVxuXG4jIENhbGN1bGF0ZSB0aGUgbWVkaWFuXG5tZWRpYW4oZXZlbl92YWx1ZXMpIn0=
+</div>
+<p>So what R does here is simple. Since the vector <code>even_values</code> has 8 elements in it, the median cannot be the middle value since technically we have two middle values in this set of values. What happens is, R will add these two middle values together and divide by the count of these numbers, which in this case is 2. In other words, R calculates the average of the middle values so in the background, the two values in the middle of <code>even_values</code>, 4 and 5 are added and divided by the count of these values which is 2. This is what happens mathematically the sum of 4 and 5 divided by 2 becomes our median value.</p>
+</div>
+<div id="mode" class="section level4 hasAnchor" number="6.2.3.3">
+<h4><span class="header-section-number">6.2.3.3</span> Mode<a href="lesson-3-vectors.html#mode" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The mode refers to the value that occurs the most in a distribution. If you visualize a histogram, this value will represent the peak of the distribution. R does not have a built-in function that calculates the mode of a distribution. But you can use the <code>table()</code> function to calculate the most recurring value in a distribution.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSBhIHZlY3RvciB2MVxudjEgPC0gYygxLCA1LCA5LCA5LCAxNywgNSwgMTMsIDksIDksIDMsIDEsIDkpXG5cbiMgVGFidWxhdGUgbW9zdCByZWN1cnJpbmcgdmFsdWVcbnRhYmxlKHYxKSJ9
+</div>
+<p>Voilà! We can find that from our v1 vector that the most recurring values is 9.
+The <code>table()</code> function in R is used to create contingency tables of the counts
+of categories. Do not worry about it so much now as we will discuss it in
+further detail in latter lessons. But also a spoiler: in a latter lesson about
+functions you will create a function that calculates the mode of a given
+distribution.</p>
+</div>
+<div id="standard-deviation" class="section level4 hasAnchor" number="6.2.3.4">
+<h4><span class="header-section-number">6.2.3.4</span> Standard Deviation<a href="lesson-3-vectors.html#standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Standard deviation is a measure of the dispersion or spread of a set of values
+around the mean, indicating how much values in a given distribution deviate
+from the average. A larger standard deviation implies greater variability or
+spread of the values, while a smaller standard deviation suggests less
+variability or tighter clustering of the values around the mean.</p>
+<p>In R you can calculate the standard deviation of a range of values by using the
+<code>sd()</code> function. Let us see that in action.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSB2ZWN0b3JcbnZlYyA8LSBjKDQ0LCA4NywgNTYsIDMyLCA3NywgMjUsIDYxLCA1MCwgMTApXG5cbiMgQ2FsY3VsYXRlIHRoZSBzdGFuZGFyZCBkZXZpYXRpb24gb2YgdmVjXG5zZCh2ZWMpIn0=
+</div>
+</div>
+<div id="minimum-and-maximum" class="section level4 hasAnchor" number="6.2.3.5">
+<h4><span class="header-section-number">6.2.3.5</span> Minimum and Maximum<a href="lesson-3-vectors.html#minimum-and-maximum" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The minimum is used to refer to the minimum or smallest value in a given
+distribution while maximum refers to the greatest or largest value in a given
+distribution.</p>
+<p>In R, in the most unimaginative way as possible, the functions to calculate
+the minimum and maximum values in a given distribution are <code>min()</code> and <code>max()</code>
+respectively. As always, let us see an example of this.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSB2ZWN0b3JcbnggPC0gYyg1LCA5LCA5OCwgMjMsIDIsIDIyLCA2NSwgOTksIDg3LCAzNSwgMTcpXG5cbiMgRmluZCB0aGUgaGlnaGVzdCB2YWx1ZSBpbiB2ZWN0b3IgeFxubWF4KHgpXG5cbiMgRmluZCB0aGUgc21hbGxlc3QgdmFsdWUgaW4gdmVjdG9yIHhcbm1pbih4KSJ9
+</div>
+<p>For our vector <code>x</code>, the smallest value was 2 and the highest value was 99.</p>
+</div>
+<div id="important" class="section level4 hasAnchor" number="6.2.3.6">
+<h4><span class="header-section-number">6.2.3.6</span> IMPORTANT<a href="lesson-3-vectors.html#important" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For calculating summary statistics, there is one very important detail you
+should note. In R and in real life, more often than not you will encounter
+missing values or undefined values in distributions. In R, these values are
+represented by NA, which is short for Not Available.</p>
+<p>When calculating any summary statistic, it is recommended to initially check if
+that range of values contain NA values. We will get to that shortly but I want
+to show you what happens when you try to calculate a summary statistic when
+there are NA values present in the data that you are working with.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFZlY3RvciBjb250YWluaW5nIE5BIHZhbHVlc1xuYSA8LSBjKDEyLCA0LCAzLCAxNywgTkEsIDIwLCAxOSlcblxuIyBDYWxjdWxhdGUgbWVhblxubWVhbihhKSJ9
+</div>
+<p>Running this code chunk above gives you a mean of NA, which isn’t right. Now
+imagine you had data and variables that you wanted to report on the mean or
+median or standard deviation for and you get an NA value, that is not so
+practical is it. This is R’s default behavior with handling missing values but
+I will also like to point out the importance of this behavior. R does this to
+ensure missing data is not inadvertently ignored or treated as zero as this
+can potentially lead to misleading results in data analysis. You would have to
+explicitly supply an extra argument known as <code>na.rm</code> and set it to <code>TRUE</code>. R
+will then remove the missing values before computing the summary statistic, in
+our case, the mean. Let us quickly do this below.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFZlY3RvciBjb250YWluaW5nIE5BIHZhbHVlc1xuYSA8LSBjKDEyLCA0LCAzLCAxNywgTkEsIDIwLCAxOSlcblxuIyBDYWxjdWxhdGUgbWVhblxubWVhbihhLCBuYS5ybSA9IFRSVUUpIn0=
+</div>
+<p>Now the mean is calculated correctly for us. This applies also to functions
+like <code>median()</code>, <code>sd()</code>, <code>max()</code>, <code>min()</code>.</p>
+<p>The question that is probably lingering behind the back of your head is how do
+you check if a vector has NA values. You can use a function called <code>is.na()</code>.</p>
+<p>This function however will return a vector of logical values which is prints
+true or false for each element stating whether it is an NA value or not.
+See how this works.</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSB2ZWN0b3IgY29udGFpbmluZyBOQSB2YWx1ZXNcbmEgPC0gYygxMiwgNCwgMywgMTcsIE5BLCAyMCwgMTksIE5BKVxuXG4jIENoZWNrIGlmIGEgaGFzIG1pc3NpbmcgdmFsdWVzXG5pcy5uYShhKSJ9
+</div>
+<p>So this functions returns a logical vector and the elements of this logical
+vector specifies whether the element in the vector you are checking for NA
+values in is an NA value or not.</p>
+<p>Now if you have a really large vector with a lot of elements this logical
+vector will return a lot of values which may be a little difficult to manually
+scan each element of the output of this logical vector to determine if there is
+a TRUE value before you conclude there are missing values in the distribution
+you’re working with. This is where I teach you another R function that makes
+your life easier: the <code>any()</code> function. Let’s look at how it works with the
+same vector</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWF0ZSB2ZWN0b3IgY29udGFpbmluZyBOQSB2YWx1ZXNcbmEgPC0gYygxMiwgNCwgMywgMTcsIE5BLCAyMCwgMTksIE5BKVxuXG4jIENoZWNrIGlmIGEgaGFzIG1pc3NpbmcgdmFsdWVzXG5hbnkoaXMubmEoYSkpIn0=
+</div>
+<p>This returns just one value that specifies if there is any NA value present in
+the distribution you are working with and you know whether to supply a value to
+the <code>na.rm</code> argument when computing a summary statistic.</p>
 
 </div>
 </div>
