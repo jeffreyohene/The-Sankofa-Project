@@ -1,5 +1,12 @@
 # LESSON 2: Data Structures
 
+<script src="files/js/dcl.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+```{r ,include=FALSE}
+tutorial::go_interactive(greedy=TRUE)
+```
+
 Structure. Layout. Format. Organization. Architecture. All different words for
 the same terrible thing: BORINGGG! BOOOO!!!
 

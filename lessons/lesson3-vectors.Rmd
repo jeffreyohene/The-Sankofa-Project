@@ -1,10 +1,11 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # LESSON 3: Vectors
+
+<script src="files/js/dcl.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+```{r ,include=FALSE}
+tutorial::go_interactive(greedy=TRUE)
+```
 
 Vectors are like the Swiss army knife of data structures. Almost every
 data structure can be built with vectors.
@@ -27,7 +28,7 @@ numeric data type in R, that vector can only contain numeric data, same
 goes for integer, character and boolean data types.
 
 In R, to create a vector, you can use the `c()` function. The `c` means
-combine or concatenate.cLet us see an example of a vector now.
+combine or concatenate.Let us see an example of a vector now.
 
 ```{r}
 # create a vector of numbers
@@ -100,16 +101,29 @@ years
 ```
 
 Now time to test your hands on this. Create a vector of numbers from 100
-to 107.
+to 107 and assign to a variable called `vec`.
 
-```{r}
+```{r, ex="vec1", type="sample-code"}
 # Create a vector of numbers from 100 to 107
 
 ```
 
+
+```{r, ex="vec1", type="solution"}
+# Create a vector of numbers from 100 to 107
+vec <- 100:107
+vec
+```
+
+```{r, ex="vec1", type="sct"}
+test_object("vec")
+test_output_contains("vec <- 100:107;vec", incorrect_msg = "Make sure to print `vec`.")
+success_msg("Successful!")
+```
+
 ![](files/img/gifs/approve.gif)
 
-Bien fait!
+Bien fait. Monica Geller approves!
 
 ### The `seq()` function
 
@@ -125,17 +139,25 @@ vec1 <- seq(from = 1, to = 10, by = 2)
 vec1
 ```
 
-```{r}
-# Create a sequence from 1 to 10 by increments of 2
-vec2 <- seq(from = 3, to = 36, by = 3)
 
-vec2
+Your turn! Create a sequence of vectors of multiples of 3 from 3 to 36 and
+assign it to `v1`.
+
+```{r, ex="vec2",type="sample-code"}
+# Sequence from 3 to 36
 ```
 
-Your turn, create a sequence of vectors of multiples of 3 from 3 to 36.
-
-```{r}
+```{r, ex="vec2",type="solution"}
 # Sequence from 3 to 36
+v1 <- seq(from = 3, to = 36, by = 3)
+v1
+```
+
+```{r, ex="vec2",type="sct"}
+test_object("v1")
+test_output_contains("v1 <- seq(from = 3, to = 36, by = 3); v1",
+                     incorrect_msg = "Make sure to print `vec`.")
+success_msg("Successful!")
 ```
 
 ### The `vector()` function
@@ -216,11 +238,18 @@ v2 <- 10:13
 v2 - v1
 ```
 
-So you noticed R coughed up a result for us but produced a warning that: `Warning: longer object length is not a multiple of shorter object length`
+So you noticed R coughed up a result for us but produced a warning that:
+`Warning: longer object length is not a multiple of shorter object length`
 
-This is because we tried to perform an arithmetic operation on two vectors of unequal length. R is of course happy to cough up a result for you but look closely at the result printed after the warning, it is a vector of length 5 elements. Quick tip: in R, you can use the function `length()` to check how many elements are in a vector.
+This is because we tried to perform an arithmetic operation on two vectors of
+unequal length. R is of course happy to cough up a result for you but look
+closely at the result printed after the warning, it is a vector of length 5
+elements. Quick tip: in R, you can use the function `length()` to check how
+many elements are in a vector.
 
-Let us go over our previous code once again and dissect it further. You remember how we said we will me comfortable and learn to understand errors and warnings instead of panicking when we see them? This is one of those times!
+Let us go over our previous code once again and dissect it further. You
+remember how we said we will me comfortable and learn to understand errors and
+warnings instead of panicking when we see them? This is one of those times!
 
 ```{r}
 # Define a vector of unequal lengths
@@ -235,7 +264,8 @@ v2
 v2 - v1
 ```
 
-Let us now change the elements in both vectors and make one vector longer than another to see something very strange.
+Let us now change the elements in both vectors and make one vector longer than
+another to see something very strange.
 
 ```{r}
 # Define two vectors
@@ -246,7 +276,9 @@ length(a)
 length(b)
 ```
 
-We can see from the above code that our first vector has 5 elements while our second has 10 elements. Let us perform a subtraction operation on these vectors. We will subtract b from a and save it to a variable to print later
+We can see from the above code that our first vector has 5 elements while our
+second has 10 elements. Let us perform a subtraction operation on these
+vectors. We will subtract b from a and save it to a variable to print later
 
 ```{r}
 # Define vectors a and b
@@ -260,7 +292,10 @@ c <- b - a
 c
 ```
 
-In the result produced from subtracting those vectors, we see something interesting. R produced the resulting vector `c`. Why doe we now have modified elements although vector `a` ran out of elements? What R does in the background is this:
+In the result produced from subtracting those vectors, we see something
+interesting. R produced the resulting vector `c`. Why doe we now have modified
+elements although vector `a` ran out of elements? What R does in the background
+is this:
 
 ```{md}
 a: 20 40 60 80 100
@@ -269,11 +304,23 @@ b: 50 100 150 200 250 300 350 400 450 500
 b - a: 50-20 100-40 150-60 200-80 250-100 300-20 350-40 400-60 450-80 500-100  
 ```
 
-You will notice that, after the last element in a was reached, R started over the vector a till it matched the length of vector b to ensure the operation was complete. Why is this? This behavior is because, when R is performing an arithmetic operation on two vectors of unequal lengths, it recycles every element in the shorter vector till it matches the length of the longer vector. This is unintended behavior if you are not specifically performing an operation that mimics this. So when you define two vectors to perform an arithmetic operation on them, always ensure they are of similar lengths to avoid introducing unintended behavior into your code.
+You will notice that, after the last element in a was reached, R started over
+the vector a till it matched the length of vector b to ensure the operation was
+complete. Why is this? This behavior is because, when R is performing an
+arithmetic operation on two vectors of unequal lengths, it recycles every
+element in the shorter vector till it matches the length of the longer vector.
+This is unintended behavior if you are not specifically performing an
+operation that mimics this. So when you define two vectors to perform an
+arithmetic operation on them, always ensure they are of similar lengths to
+avoid introducing unintended behavior into your code.
 
-Time for you to do some vector operations yourself. In the next two code chunks, define two vectors, x and y, where vector x is a vector with elements from numbers 8 to 14 and vector y contains elements from 3 to 9. In the first code chunk multiply x by y and in the next, divide y by x save both results to a variable called z and print it out.
+Time for you to do some vector operations yourself. In the next two code
+chunks, define two vectors, x and y, where vector x is a vector with elements
+from numbers 8 to 14 and vector y contains elements from 3 to 9. In the first
+code chunk multiply x by y and in the next, divide y by x save both results
+to a variable called z and print it out.
 
-```{r}
+```{r,ex="vec3", type="sample-code"}
 # Define vector x and y
 
 
@@ -285,7 +332,27 @@ Time for you to do some vector operations yourself. In the next two code chunks,
 
 ```
 
-```{r}
+```{r,ex="vec3", type="solution"}
+# Define vector x and y
+x <- 8:14
+y <- 3:9
+
+# Perform multiplication and save to z
+z <- x * y
+
+# Print z
+z
+```
+
+```{r,ex="vec3", type="sct"}
+test_object("x","y","z")
+test_output_contains("x <- 8:14;y <- 3:9;z <- x * y;z",
+                     incorrect_msg = "Did you assign the variables correctly?.")
+success_msg("Successful!")
+```
+
+
+```{r,ex="vec3", type="sample-code"}
 # Define vector x and y
 
 
@@ -297,27 +364,35 @@ Time for you to do some vector operations yourself. In the next two code chunks,
 
 ```
 
-
-Nicely done. Your results for both operations should be:
-
-`24  36  50  66  84 104 126` and `0.3750000 0.4444444 0.5000000 0.5454545 0.5833333 0.6153846 0.6428571`
 
 
 ### Indexing
 
-This might be one of the most handy R concepts you might learn from this course. Indexing is a pretty valuable concept to understand. Indexing in vectors refers to the process of accessing individual elements or subsets of elements within a vector. The syntax for indexing in R with vectors is using the square-bracket notation: `vector[index]` and specifying the index of the element or elements you want to extract. It is important to also state that, while other programming languages indexing starts at 0 (LuNATICS), in R, like the sane people we are, indexing starts at 1.
+This might be one of the most handy R concepts you might learn from this
+course. Indexing is a pretty valuable concept to understand. Indexing in
+vectors refers to the process of accessing individual elements or subsets of
+elements within a vector. The syntax for indexing in R with vectors is using
+the square-bracket notation: `vector[index]` and specifying the index of the
+element or elements you want to extract. It is important to also state that,
+while other programming languages indexing starts at 0 (LUNATICS!), in R, like
+the sane people we are, indexing starts at 1.
 
-In R, indexing allows you to retrieve specific elements from a vector based on their position or index within the vector. We will learn about 3 types of indexing methods for this lesson and they are:
+In R, indexing allows you to retrieve specific elements from a vector based on
+their position or index within the vector. We will learn about 3 types of
+indexing methods for this lesson and they are:
 
 - single & multi element indexing
 - logical indexing
 - negative indexing
 
-Now I left another type of creating vector out specifically so we can talk about it in this sub-lesson
+Now I left another type of creating vector out specifically so we can talk
+about it in this sub-lesson
 
 #### Single & Multi Element Indexing
 
-To extract or access a single element in a vector, you use square brackets and then supply the index of that element. If you are working with a named vector however, you only need to supply the name of that element.
+To extract or access a single element in a vector, you use square brackets and
+then supply the index of that element. If you are working with a named vector
+however, you only need to supply the name of that element.
 
 
 Let us see single element indexing in motion.
@@ -358,5 +433,346 @@ Wow we did it together. If you really in anyway enjoy eating watermelon, kindly 
 
 ![](files/img/gifs/sgame.gif)
 
-Now that we have completed our yearly fruitshaming activity, let us move on to multi element indexing. Sometimes you want to extract more than one element from a preexisting vector. How do we do that? We can do something called negative indexing which we will learn about later but wherever possible in your code, it is generally recommended not to alter ekements you will reuse later, so instead of deleting elements which negative indexing does, We will extract what we need and save to a new vector. Going back to our fruits vector, let us say we want to extract the top 3 fruits of all time.
+Now that we have completed our daily fruit-shaming activity, let us move on to
+multi-element indexing. Sometimes you want to extract more than one element
+from a preexisting vector. How do we do that? We can do something called
+negative indexing which we will learn about later but wherever possible in your
+code, it is generally recommended not to alter elements you will reuse later,
+so instead of deleting elements which negative indexing does, we will extract
+what we need and save to a new vector. Going back to our fruits vector, let us
+say we want to extract the top 3 fruits of all time.
+
+```{r}
+# Fruits vector
+fruits <- c("mango", "avocado", "banana", "pawpaw", "kiwi", "watermelon", "grape")
+
+# Index best fruits
+goat_fruits <- fruits[1:3]
+goat_fruits
+```
+You noticed here we used our old friend the colon operator. The colon operator
+is not just used to create vectors you can also use it to specify a range to
+index a vector with. It is very handy when you want to generate a consecutive
+sequence and use that sequence to index a vector but sometimes, just sometimes,
+you would want to index elements in a vector that are not in a consecutive
+sequence. I know by now you're saying what the hell is this guy on about but
+stay with me. Let me show you an example quickly, we shall use our fruit
+vector once again
+
+```{r}
+# Fruits vector
+fruits <- c("mango", "avocado", "banana", "pawpaw", "kiwi", "watermelon", "grape")
+
+# Index mango, banana, kiwi and grape
+new_fruits <- fruits[c(1, 3, 5, 7)]
+new_fruits
+```
+See there, we used a vector to index another vector. But this time, because the
+elements were not at consecutive indices, that is, indices 1, 2, 3, 4, 5, 6, 7
+and so on, we had to supply the indices of the elements we wanted to extract as
+a vector to be able to subset those elements.
+
+You remember the `:` operator we used to subset the best fruits of all time?
+Using that was a shortcut and we could have also used a vector to subset the
+those fruits like this
+
+```{r}
+# Fruits vector
+fruits <- c("mango", "avocado", "banana", "pawpaw", "kiwi", "watermelon", "grape")
+
+# Index best fruits
+goat_fruits <- fruits[c(1, 2, 3)]
+goat_fruits
+```
+This worked too. We did not use the colon operator but we were still able to
+subset the same elements. You will find that in R, there are numerous ways to
+solve a problem and the selection of a solution for any problem or task you may
+encounter is dependent on that specific task.
+
+#### Logical Indexing
+
+
+Logical indexing in R refers to the process of using logical vectors to subset
+or extract elements from a data structure based on a given condition.
+
+So in indexing a vector with a logical vector, you need to first create the
+condition you want to subset for then use that logical vector to subset the
+initial vector you want to index to extract only elements that meet the 
+specified condition.
+
+```{r}
+# Create a vector
+vec <- c(54, 10, 21, 30, 40, 12, 98, 50, 85, 13)
+
+# Create a logical vector indicating which elements are greater than 30
+logical_vector <- vec > 30
+
+# Use logical indexing to subset elements greater than 30
+subset_vec <- vec[logical_vector]
+
+# Print the result
+subset_vec
+
+```
+
+
+
+
+### SUMMARY STATISTICS
+
+![](files/img/gifs/summary.gif)
+
+
+Summary statistics are numerical values that summarize and describe features
+of a range of values. They provide insights into the characteristics and
+distribution of the data. For this lesson we will talk about mean, median,
+mode, standard deviation, minimum, maximum and variance. You will be performing
+summary statistic operations mostly on dataframes but in the background R
+treats this columns you will try to derive summary statistics from so we will
+see how to do that. We will do a lesson on summary statistics and its
+applications in R from a theoretical and then a practical point of view but
+this section will talk we will serve summary statistics as an entrée (I'm
+fresh of my daily french duolingo lesson lol).
+
+
+#### Mean
+
+The mean is the average value of a set of given values. It is calculated by 
+adding up all the values in the given set of numbers and then dividing by the
+total number of values in that distribution. The function to do this is:
+`mean()`.
+
+Let us see how to calculate the mean of a given range of values in R. The data structure we will use in this lesson is vectors.
+
+```{r}
+# Create a vector of numbers
+vec <- seq(from=1,to=21, by=3)
+
+# Calculate the mean of vec
+mean(vec)
+```
+
+Perfect! We were able to calculate the mean of vec and we got the answer 10.
+This is how you calculate the mean. Try your hands on calculating the mean of a 
+vector called `v1` which contains a sequence of numbers from 28 to 50. You can
+use the colon operator to create this `v1` and calculate the mean.
+
+```{r}
+# Create a vector named v1 thuat contains numbers from 28 to 50
+
+
+# Calculate the mean of v1
+
+```
+
+```{r}
+
+```
+
+#### Median
+
+The median is a measure of central tendency that represents the middle value of
+a given set of values when that set of values is ordered from the least to the
+greatest. In R, when you call the median function, the rearrangement from 
+least to greatest value is automatically performed in the background. Cool, no?
+
+There is a little thing I would like to include here. If the length of the
+range of values that the median is being calculated for is odd, the median will
+be the middle value however if the range of values is an even number of values,
+the median is the average of the two middle values. 
+
+![](files/img/gifs/math-hmm.gif)
+
+If this confused you, you definitely hate math but hold on, I will show what 
+this means in an example below.
+
+
+```{r}
+# Create a vector with an odd number of values
+odd_values <- c(1, 2, 3, 4, 5, 6, 7)
+
+# Check length of odd_values
+length(odd_values)
+
+# Calculate the median
+median(odd_values)
+```
+
+In the example above, the vector `odd_values` has 7 values as printed by the
+result of the `length()` function called on `odd_values`. So the median is
+going to be the middle number of the set of values of the vector `odd_values`.
+
+Let us see another example with a range of values whose length is even.
+
+```{r}
+# Create a vector with an even number of values
+even_values <- c(1, 2, 3, 4, 5, 6, 7, 8)
+
+# Check length of even_values
+length(even_values)
+
+# Calculate the median
+median(even_values)
+```
+
+So what R does here is simple. Since the vector `even_values` has 8 elements in it, the median cannot be the middle value since technically we have two middle values in this set of values. What happens is, R will add these two middle values together and divide by the count of these numbers, which in this case is 2. In other words, R calculates the average of the middle values so in the background, the two values in the middle of `even_values`, 4 and 5 are added and divided by the count of these values which is 2. This is what happens mathematically the sum of 4 and 5 divided by 2 becomes our median value.
+
+
+#### Mode
+
+The mode refers to the value that occurs the most in a distribution. If you visualize a histogram, this value will represent the peak of the distribution. R does not have a built-in function that calculates the mode of a distribution. But you can use the `table()` function to calculate the most recurring value in a distribution.
+
+```{r}
+# Create a vector v1
+v1 <- c(1, 5, 9, 9, 17, 5, 13, 9, 9, 3, 1, 9)
+
+# Tabulate most recurring value
+table(v1)
+```
+
+Voilà! We can find that from our v1 vector that the most recurring values is 9.
+The `table()` function in R is used to create contingency tables of the counts
+of categories. Do not worry about it so much now as we will discuss it in
+further detail in latter lessons. But also a spoiler: in a latter lesson about
+functions you will create a function that calculates the mode of a given
+distribution.
+
+#### Standard Deviation
+
+Standard deviation is a measure of the dispersion or spread of a set of values 
+around the mean, indicating how much values in a given distribution deviate
+from the average. A larger standard deviation implies greater variability or
+spread of the values, while a smaller standard deviation suggests less
+variability or tighter clustering of the values around the mean.
+
+In R you can calculate the standard deviation of a range of values by using the
+`sd()` function. Let us see that in action.
+
+```{r}
+# Create vector
+vec <- c(44, 87, 56, 32, 77, 25, 61, 50, 10)
+
+# Calculate the standard deviation of vec
+sd(vec)
+```
+
+#### Minimum and Maximum
+
+The minimum is used to refer to the minimum or smallest value in a given
+distribution while maximum refers to the greatest or largest value in a given
+distribution.
+
+In R, in the most unimaginative way as possible, the functions to calculate
+the minimum and maximum values in a given distribution are `min()` and `max()`
+respectively. As always, let us see an example of this.
+
+```{r}
+# Create vector
+x <- c(5, 9, 98, 23, 2, 22, 65, 99, 87, 35, 17)
+
+# Find the highest value in vector x
+max(x)
+
+# Find the smallest value in vector x
+min(x)
+```
+
+For our vector `x`, the smallest value was 2 and the highest value was 99.
+
+
+#### IMPORTANT
+
+For calculating summary statistics, there is one very important detail you
+should note. In R and in real life, more often than not you will encounter
+missing values or undefined values in distributions. In R, these values are
+represented by NA, which is short for Not Available. 
+
+When calculating any summary statistic, it is recommended to initially check if
+that range of values contain NA values. We will get to that shortly but I want
+to show you what happens when you try to calculate a summary statistic when
+there are NA values present in the data that you are working with.
+
+```{r}
+# Vector containing NA values
+a <- c(12, 4, 3, 17, NA, 20, 19)
+
+# Calculate mean
+mean(a)
+```
+
+Running this code chunk above gives you a mean of NA, which isn't right. Now
+imagine you had data and variables that you wanted to report on the mean or
+median or standard deviation for and you get an NA value, that is not so
+practical is it. This is R's default behavior with handling missing values but
+I will also like to point out the importance of this behavior. R does this to
+ensure missing data is not inadvertently ignored or treated as zero as this
+can potentially lead to misleading results in data analysis. You would have to
+explicitly supply an extra argument known as `na.rm` and set it to `TRUE`. R
+will then remove the missing values before computing the summary statistic, in 
+our case, the mean. Let us quickly do this below.
+
+```{r}
+# Vector containing NA values
+a <- c(12, 4, 3, 17, NA, 20, 19)
+
+# Calculate mean
+mean(a, na.rm = TRUE)
+```
+
+Now the mean is calculated correctly for us. This applies also to functions
+like `median()`, `sd()`, `max()`, `min()`. 
+
+The question that is probably lingering behind the back of your head is how do
+you check if a vector has NA values. You can use a function called `is.na()`. 
+
+This function however will return a vector of logical values which is prints
+true or false for each element stating whether it is an NA value or not.
+See how this works.
+
+```{r}
+# Create vector containing NA values
+a <- c(12, 4, 3, 17, NA, 20, 19, NA)
+
+# Check if a has missing values
+is.na(a)
+```
+
+So this functions returns a logical vector and the elements of this logical
+vector specifies whether the element in the vector you are checking for NA
+values in is an NA value or not.
+
+Now if you have a really large vector with a lot of elements this logical
+vector will return a lot of values which may be a little difficult to manually
+scan each element of the output of this logical vector to determine if there is
+a TRUE value before you conclude there are missing values in the distribution
+you're working with. This is where I teach you another R function that makes
+your life easier: the `any()` function. Let's look at how it works with the
+same vector
+
+```{r}
+# Create vector containing NA values
+a <- c(12, 4, 3, 17, NA, 20, 19, NA)
+
+# Check if a has missing values
+any(is.na(a))
+```
+
+This returns just one value that specifies if there is any NA value present in
+the distribution you are working with and you know whether to supply a value to
+the `na.rm` argument when computing a summary statistic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
