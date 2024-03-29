@@ -1,0 +1,24 @@
+# LESSON 4: MATRICES
+
+<script src="files/js/dcl.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+```{r ,include=FALSE}
+tutorial::go_interactive(greedy=TRUE)
+```
+
+
+![](files/img/neo.jpg)
+
+Matrices are like that cousin who you do not like but do not hate but at the
+family reunion that's the one person you will hang out with if you had to
+choose when your favorite cousin is wasted and long asleep.
+
+We learnt previously that vectors are one-dimensional data objects in R that
+store homogeneous data types but they are two dimensional, that is they contain
+rows and columns.
+
+As you will find out if you're going to do more algebra and advanced machine
+learning operations, matrices are a very powerful data structure to work with
+given because they are very efficient. I will shortly do a brain fuck by slightly explaining how this efficiency works. Matrices in R are stored in a computer's memory as contiguous blocks of memory, that is, elements of a matrix are stored one after the other in a computer memory making it extremely efficient for accessing elements in a sequential order. It is why in R, vectorized operations, operations that a
+
